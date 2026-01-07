@@ -578,7 +578,7 @@ export const EnvelopeCover = ({ guestName, onOpen }: GreetingCardProps) => {
                     "0 1px 3px rgba(0,0,0,0.4), 0 0 1px rgba(0,0,0,0.2)",
                 }}
               >
-                {groomInitial}&{brideInitial}
+                T&N
               </span>
             </div>
 

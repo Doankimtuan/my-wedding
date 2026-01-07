@@ -23,7 +23,7 @@ export function HeroSection() {
 
   // Parse date
   const weddingDate = new Date(info.wedding_date);
-  const day = weddingDate.getDate().toString();
+  const day = weddingDate.getDate().toString().padStart(2, "0");
   const month = (weddingDate.getMonth() + 1).toString().padStart(2, "0");
   const year = weddingDate.getFullYear();
 
@@ -432,11 +432,11 @@ export function HeroSection() {
           <span className="font-serif-numbers text-2xl sm:text-3xl font-light">
             {day}
           </span>
-          <span className="w-5 sm:w-7 h-[1px] bg-[var(--wedding-accent)]/60" />
+          <span className="text-xl opacity-50">·</span>
           <span className="font-serif-numbers text-2xl sm:text-3xl font-light">
             {month}
           </span>
-          <span className="w-5 sm:w-7 h-[1px] bg-[var(--wedding-accent)]/60" />
+          <span className="text-xl opacity-50">·</span>
           <span className="font-serif-numbers text-2xl sm:text-3xl font-light">
             {year}
           </span>
