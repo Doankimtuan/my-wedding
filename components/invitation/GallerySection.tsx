@@ -14,17 +14,18 @@ const GALLERY = {
   splitLeft: "/images/gallery-2.jpg",
   splitRight: "/images/gallery-3.jpg",
   film: [
-    "/images/gallery-4.jpg",
-    "/images/gallery-2.jpg",
-    "/images/gallery-5.jpg",
+    "/images/file-1.jpg",
+    "/images/file-2.jpg",
+    "/images/file-3.png",
+    "/images/file-4.jpg",
   ],
-  floating: "/images/gallery-1.jpg",
-  highlight: "/images/gallery-5.jpg",
+  floating: "/images/floating.jpg",
+  highlight: "/images/highlight.jpg",
 };
 
 export function GallerySection() {
   return (
-    <section className="relative bg-[var(--wedding-bg-paper)] pb-20 overflow-hidden">
+    <section className="relative bg-[var(--wedding-bg-paper)] overflow-hidden">
       {/* ═══════════════════════════════════════════════
           BOTANICAL DECORATION — TOP LEFT
           ═══════════════════════════════════════════════ */}

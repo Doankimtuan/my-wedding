@@ -21,16 +21,10 @@ interface BankInfo {
 
 const bankAccounts: BankInfo[] = [
   {
-    bankName: "TPBank",
-    accountNumber: "62292826729",
-    accountName: "DOAN KIM TUAN",
-    qrCode: "/images/qr-tpbank.png", // Add your QR code images
-  },
-  {
-    bankName: "VPBank",
-    accountNumber: "198532436",
+    bankName: "Vietcombank",
+    accountNumber: "1032668177",
     accountName: "LE THI THANH NGAN",
-    qrCode: "/images/qr-vpbank.png",
+    qrCode: "/images/qr.png",
   },
 ];
 

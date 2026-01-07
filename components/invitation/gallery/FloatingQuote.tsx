@@ -2,6 +2,8 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import Image from "next/image";
+import FloatingImage from "@/assets/images/floating.jpg";
 
 interface FloatingQuoteProps {
   src: string;
@@ -20,10 +22,13 @@ export function FloatingQuote({ src, quote }: FloatingQuoteProps) {
   return (
     <div ref={ref} className="relative py-8 px-4">
       {/* Main Image */}
-      <div className="w-full aspect-[4/5] bg-gray-200 overflow-hidden rounded-sm ml-auto mr-0 md:mr-4 md:w-3/4 shadow-lg">
-        <div
-          className="w-full h-full bg-cover bg-center"
-          style={{ backgroundImage: `url(${src})` }}
+      <div className="w-full aspect-[4/5] overflow-hidden rounded-sm ml-auto mr-0 md:mr-4 md:w-3/4 shadow-lg relative">
+        <Image
+          src={FloatingImage}
+          alt="Tender moment"
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, 75vw"
         />
       </div>
 

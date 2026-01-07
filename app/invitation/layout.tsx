@@ -33,12 +33,59 @@ const crimson = Crimson_Text({
 });
 
 export const metadata: Metadata = {
-  title: "Wedding Invitation | Minh Tung & Thanh Thuy",
-  description: "You are cordially invited to celebrate our wedding",
+  title: "Thiệp Cưới | Kim Tuấn & Thanh Ngân",
+  description:
+    "Trân trọng kính mời bạn đến dự lễ thành hôn của chúng tôi. Hãy cùng chia sẻ niềm vui trong ngày trọng đại này!",
+  keywords: [
+    "thiệp cưới",
+    "wedding invitation",
+    "đám cưới",
+    "Kim Tuấn",
+    "Thanh Ngân",
+    "wedding",
+    "lễ cưới",
+  ],
+  authors: [{ name: "Kim Tuấn & Thanh Ngân" }],
+  creator: "Kim Tuấn & Thanh Ngân",
+  metadataBase: new URL("https://my-wedding.vercel.app"),
   openGraph: {
-    title: "Wedding Invitation | Minh Tung & Thanh Thuy",
-    description: "You are cordially invited to celebrate our wedding",
+    title: "💒 Thiệp Cưới | Kim Tuấn & Thanh Ngân",
+    description:
+      "Trân trọng kính mời bạn đến dự lễ thành hôn của chúng tôi. Hãy cùng chia sẻ niềm vui trong ngày trọng đại này!",
     type: "website",
+    locale: "vi_VN",
+    siteName: "Thiệp Cưới Kim Tuấn & Thanh Ngân",
+    images: [
+      {
+        url: "/images/cover.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Thiệp cưới Kim Tuấn & Thanh Ngân",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "💒 Thiệp Cưới | Kim Tuấn & Thanh Ngân",
+    description: "Trân trọng kính mời bạn đến dự lễ thành hôn của chúng tôi!",
+    images: ["/images/cover.jpg"],
+  },
+  icons: {
+    icon: [
+      { url: "/images/favicon.png", sizes: "32x32", type: "image/png" },
+      { url: "/images/favicon.png", sizes: "16x16", type: "image/png" },
+    ],
+    apple: [
+      { url: "/images/favicon.png", sizes: "180x180", type: "image/png" },
+    ],
+  },
+  manifest: "/manifest.json",
+  themeColor: "#d4a574",
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 1,
+    userScalable: false,
   },
 };
 

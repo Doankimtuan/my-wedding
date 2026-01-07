@@ -30,7 +30,7 @@ export function HeroSection() {
   return (
     <section
       ref={containerRef}
-      className="relative min-h-[100vh] flex flex-col items-center justify-center py-10 overflow-hidden"
+      className="relative min-h-[60vh] flex flex-col items-center justify-center overflow-hidden"
     >
       {/* ═══════════════════════════════════════════════
           BACKGROUND LAYER — Radial glow + enhanced ambience

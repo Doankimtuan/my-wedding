@@ -1,19 +1,21 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
-import File1Image from "../../../assets/images/file-1.jpg";
-// import File2Image from "@/assets/images/file2.jpg";
-// import File3Image from "@/assets/images/file3.jpg";
-// import File4Image from "@/assets/images/file4.jpg";
-// import File5Image from "@/assets/images/file5.jpg";
+import Image, { StaticImageData } from "next/image";
+import File1Image from "@/assets/images/file-1.jpg";
+import File2Image from "@/assets/images/file-2.jpg";
+import File3Image from "@/assets/images/file-3.png";
+import File4Image from "@/assets/images/file-4.jpg";
 
-interface FilmStripProps {
-  images: string[];
-}
+const filmImages: StaticImageData[] = [
+  File1Image,
+  File2Image,
+  File3Image,
+  File4Image,
+];
 
 export function FilmStrip() {
-  const images = ["../../../assets/images/file-1.jpg"];
+  const images = filmImages;
   return (
     <div className="px-4 md:px-6">
       {/* Warm-toned film strip that matches the wedding theme */}
@@ -68,18 +70,18 @@ export function FilmStrip() {
             >
               {/* Photo with white border */}
               <div
-                className="aspect-[4/3] overflow-hidden rounded-sm"
+                className="aspect-[4/3] overflow-hidden rounded-sm relative"
                 style={{
                   border: "4px solid white",
                   boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
                 }}
               >
-                <motion.div
-                  className="w-full h-full bg-cover bg-center"
-                  style={{ backgroundImage: `url(${src})` }}
-                  initial={{ filter: "sepia(30%)" }}
-                  whileInView={{ filter: "sepia(0%)" }}
-                  transition={{ duration: 1.5, delay: idx * 0.2 }}
+                <Image
+                  src={src}
+                  alt={`Film photo ${idx + 1}`}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
                 />
               </div>
 

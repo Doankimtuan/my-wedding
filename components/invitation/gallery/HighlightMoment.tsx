@@ -1,6 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
+import HighlightImage from "@/assets/images/highlight.jpg";
 
 interface HighlightMomentProps {
   src: string;
@@ -29,10 +31,13 @@ export function HighlightMoment({ src, text }: HighlightMomentProps) {
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ duration: 1, ease: "easeOut" }}
       >
-        <div className="w-full h-full bg-gray-200 shadow-2xl overflow-hidden rounded-t-[100px] rounded-b-[20px]">
-          <div
-            className="w-full h-full bg-cover bg-center"
-            style={{ backgroundImage: `url(${src})` }}
+        <div className="w-full h-full shadow-2xl overflow-hidden rounded-t-[100px] rounded-b-[20px] relative">
+          <Image
+            src={HighlightImage}
+            alt="Highlight moment"
+            fill
+            className="object-cover"
+            sizes="(max-width: 768px) 100vw, 400px"
           />
         </div>
       </motion.div>
