@@ -69,8 +69,8 @@ export function useWedding() {
 
 // Default values for when data is loading or unavailable
 export const defaultWeddingInfo: WeddingInfo = {
-  groom_name: "Minh Tùng",
-  bride_name: "Thanh Thùy",
+  groom_name: "Kim Tuấn",
+  bride_name: "Thanh Ngân",
   wedding_date: "2025-10-25T16:00:00",
   wedding_time: "16:00",
   venue_name: "Trung Tâm Tiệc Cưới ABC",
