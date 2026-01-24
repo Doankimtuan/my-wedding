@@ -79,21 +79,21 @@ export function WishesSection() {
   };
 
   return (
-    <section className="relative px-6 py-16 bg-[var(--wedding-bg-paper)] overflow-hidden">
+    <section className="relative px-6 py-20 bg-[var(--wedding-bg-paper)] overflow-hidden">
       {/* ═══════════════════════════════════════════════
           BOTANICAL DECORATION — LEFT
           ═══════════════════════════════════════════════ */}
       <motion.div
-        className="absolute top-12 left-0 w-16 h-28 pointer-events-none opacity-40"
+        className="absolute top-12 left-0 w-16 h-28 pointer-events-none opacity-25"
         initial={{ opacity: 0, x: -20 }}
-        whileInView={{ opacity: 0.4, x: 0 }}
+        whileInView={{ opacity: 0.25, x: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 1 }}
       >
         <svg viewBox="0 0 60 110" fill="none" className="w-full h-full">
           <path
             d="M0 0 Q12 25 10 55 Q8 85 18 110"
-            stroke="#7c9a73"
+            stroke="#A8B5A0"
             strokeWidth="1"
             fill="none"
             opacity="0.6"
@@ -103,7 +103,7 @@ export function WishesSection() {
             cy="35"
             rx="7"
             ry="3"
-            fill="#7c9a73"
+            fill="#A8B5A0"
             fillOpacity="0.25"
             transform="rotate(-20 16 35)"
           />
@@ -112,7 +112,7 @@ export function WishesSection() {
             cy="65"
             rx="5"
             ry="2"
-            fill="#7c9a73"
+            fill="#A8B5A0"
             fillOpacity="0.2"
             transform="rotate(15 12 65)"
           />
@@ -123,9 +123,9 @@ export function WishesSection() {
           BOTANICAL DECORATION — RIGHT
           ═══════════════════════════════════════════════ */}
       <motion.div
-        className="absolute top-12 right-0 w-16 h-28 pointer-events-none opacity-40"
+        className="absolute top-12 right-0 w-16 h-28 pointer-events-none opacity-25"
         initial={{ opacity: 0, x: 20 }}
-        whileInView={{ opacity: 0.4, x: 0 }}
+        whileInView={{ opacity: 0.25, x: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 1, delay: 0.1 }}
       >
@@ -137,7 +137,7 @@ export function WishesSection() {
         >
           <path
             d="M0 0 Q12 25 10 55 Q8 85 18 110"
-            stroke="#7c9a73"
+            stroke="#A8B5A0"
             strokeWidth="1"
             fill="none"
             opacity="0.6"
@@ -147,7 +147,7 @@ export function WishesSection() {
             cy="35"
             rx="7"
             ry="3"
-            fill="#7c9a73"
+            fill="#A8B5A0"
             fillOpacity="0.25"
             transform="rotate(-20 16 35)"
           />
@@ -156,7 +156,7 @@ export function WishesSection() {
             cy="65"
             rx="5"
             ry="2"
-            fill="#7c9a73"
+            fill="#A8B5A0"
             fillOpacity="0.2"
             transform="rotate(15 12 65)"
           />
@@ -169,7 +169,7 @@ export function WishesSection() {
       <div className="text-center mb-10">
         <div className="flex items-center justify-center gap-3 mb-3">
           <div className="w-10 h-[1px] bg-gradient-to-r from-transparent to-[var(--wedding-accent)]/40" />
-          <span className="font-body text-[10px] tracking-[0.35em] uppercase text-[var(--wedding-accent)] opacity-60">
+          <span className="font-body text-[10px] tracking-[0.35em] uppercase text-[var(--wedding-accent)] opacity-25">
             Lời Chúc
           </span>
           <div className="w-10 h-[1px] bg-gradient-to-l from-transparent to-[var(--wedding-accent)]/40" />
@@ -191,7 +191,7 @@ export function WishesSection() {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
+        transition={{ duration: 1 }}
       >
         <div
           className="bg-white rounded-xl p-5 relative overflow-hidden"
@@ -247,7 +247,7 @@ export function WishesSection() {
             className="w-full py-2.5 px-4 rounded-lg font-body text-sm tracking-wider transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
             style={{
               background: submitSuccess
-                ? "linear-gradient(135deg, #7c9a73 0%, #5a7a53 100%)"
+                ? "linear-gradient(135deg, #A8B5A0 0%, #5a7a53 100%)"
                 : "linear-gradient(135deg, var(--wedding-accent) 0%, #b8963d 100%)",
               color: "white",
               boxShadow: "0 4px 12px rgba(197, 168, 109, 0.25)",
@@ -370,7 +370,7 @@ export function WishesSection() {
           ═══════════════════════════════════════════════ */}
       <div className="flex items-center justify-center gap-3 mt-10">
         <div className="w-12 h-[1px] bg-gradient-to-r from-transparent to-[var(--wedding-accent)]/30" />
-        <Heart size={12} className="text-[var(--wedding-accent)] opacity-40" />
+        <Heart size={12} className="text-[var(--wedding-accent)] opacity-25" />
         <div className="w-12 h-[1px] bg-gradient-to-l from-transparent to-[var(--wedding-accent)]/30" />
       </div>
     </section>

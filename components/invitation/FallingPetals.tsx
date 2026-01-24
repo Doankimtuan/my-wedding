@@ -32,7 +32,7 @@ const petals: Petal[] = [
     duration: 25,
     rotation: 45,
     swayAmount: 35,
-    opacity: 0.4,
+    opacity: 0.25,
     color: petalColors[0],
   },
   {
@@ -54,7 +54,7 @@ const petals: Petal[] = [
     duration: 22,
     rotation: 200,
     swayAmount: 40,
-    opacity: 0.45,
+    opacity: 0.255,
     color: petalColors[2],
   },
   {
@@ -87,7 +87,7 @@ const petals: Petal[] = [
     duration: 24,
     rotation: 160,
     swayAmount: 38,
-    opacity: 0.4,
+    opacity: 0.25,
     color: petalColors[0],
   },
   {
@@ -109,7 +109,7 @@ const petals: Petal[] = [
     duration: 27,
     rotation: 240,
     swayAmount: 42,
-    opacity: 0.45,
+    opacity: 0.255,
     color: petalColors[2],
   },
   {
@@ -142,7 +142,7 @@ const petals: Petal[] = [
     duration: 29,
     rotation: 60,
     swayAmount: 52,
-    opacity: 0.42,
+    opacity: 0.252,
     color: petalColors[2],
   },
   {
@@ -164,7 +164,7 @@ const petals: Petal[] = [
     duration: 25,
     rotation: 150,
     swayAmount: 40,
-    opacity: 0.48,
+    opacity: 0.258,
     color: petalColors[1],
   },
   {
@@ -186,7 +186,7 @@ const petals: Petal[] = [
     duration: 33,
     rotation: 270,
     swayAmount: 38,
-    opacity: 0.4,
+    opacity: 0.25,
     color: petalColors[4],
   },
 ];

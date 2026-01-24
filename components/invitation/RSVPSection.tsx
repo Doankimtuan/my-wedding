@@ -64,7 +64,7 @@ export function RSVPSection({ defaultName }: RSVPSectionProps) {
   };
 
   return (
-    <section className="relative px-6 py-16 bg-[var(--wedding-bg-paper)] overflow-hidden">
+    <section className="relative px-6 py-20 bg-[var(--wedding-bg-paper)] overflow-hidden">
       {/* ... decorations ... */}
 
       {/* ... header ... */}
@@ -89,7 +89,7 @@ export function RSVPSection({ defaultName }: RSVPSectionProps) {
             animate={{ scale: 1 }}
             transition={{ delay: 0.2, type: "spring" }}
           >
-            <Check className="w-10 h-10 text-[#7c9a73]" />
+            <Check className="w-10 h-10 text-[#A8B5A0]" />
           </motion.div>
           <h4 className="font-display text-2xl text-[var(--wedding-secondary)] mb-3">
             Cảm ơn bạn!
@@ -107,10 +107,10 @@ export function RSVPSection({ defaultName }: RSVPSectionProps) {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 1 }}
         >
           <div
-            className="bg-white rounded-xl p-6 relative overflow-hidden"
+            className="bg-white rounded-xl p-8 relative overflow-hidden"
             style={{
               boxShadow: `
                 0 20px 40px -10px rgba(61, 53, 46, 0.1),
@@ -132,7 +132,7 @@ export function RSVPSection({ defaultName }: RSVPSectionProps) {
 
             {/* Name input */}
             <div className="mb-5">
-              <label className="block font-body text-xs tracking-[0.15em] text-[var(--wedding-primary)] uppercase mb-2 opacity-70">
+              <label className="block font-body text-xs tracking-[0.15em] text-[var(--wedding-primary)] uppercase mb-2 opacity-60">
                 Họ và tên
               </label>
               <input
@@ -145,7 +145,7 @@ export function RSVPSection({ defaultName }: RSVPSectionProps) {
                 }
                 placeholder="Nhập tên của bạn"
                 className={`w-full px-4 py-3 rounded-lg font-body text-sm text-[var(--wedding-secondary)] placeholder-[var(--wedding-text-muted)]/50 transition-all duration-300 focus:outline-none ${
-                  guestSlug ? "opacity-70 cursor-not-allowed" : ""
+                  guestSlug ? "opacity-60 cursor-not-allowed" : ""
                 }`}
                 style={{
                   background: "rgba(250, 247, 243, 0.8)",
@@ -154,7 +154,7 @@ export function RSVPSection({ defaultName }: RSVPSectionProps) {
                 required
               />
               {!guestSlug && (
-                <p className="mt-1 text-[10px] text-[var(--wedding-text-muted)] opacity-60">
+                <p className="mt-1 text-[10px] text-[var(--wedding-text-muted)] opacity-25">
                   Vui lòng nhập chính xác tên như trên thiệp mời.
                 </p>
               )}
@@ -162,7 +162,7 @@ export function RSVPSection({ defaultName }: RSVPSectionProps) {
 
             {/* Attendance radio — Custom styling */}
             <div className="mb-5">
-              <label className="block font-body text-xs tracking-[0.15em] text-[var(--wedding-primary)] uppercase mb-3 opacity-70">
+              <label className="block font-body text-xs tracking-[0.15em] text-[var(--wedding-primary)] uppercase mb-3 opacity-60">
                 Bạn sẽ tham dự chứ?
               </label>
               <div className="space-y-2">
@@ -216,7 +216,7 @@ export function RSVPSection({ defaultName }: RSVPSectionProps) {
                 animate={{ opacity: 1, height: "auto" }}
                 exit={{ opacity: 0, height: 0 }}
               >
-                <label className="block font-body text-xs tracking-[0.15em] text-[var(--wedding-primary)] uppercase mb-2 opacity-70">
+                <label className="block font-body text-xs tracking-[0.15em] text-[var(--wedding-primary)] uppercase mb-2 opacity-60">
                   <Users size={12} className="inline mr-1" />
                   Số lượng người tham dự
                 </label>
@@ -245,7 +245,7 @@ export function RSVPSection({ defaultName }: RSVPSectionProps) {
 
             {/* Message Input */}
             <div className="mb-6">
-              <label className="block font-body text-xs tracking-[0.15em] text-[var(--wedding-primary)] uppercase mb-2 opacity-70">
+              <label className="block font-body text-xs tracking-[0.15em] text-[var(--wedding-primary)] uppercase mb-2 opacity-60">
                 Lời nhắn (Tùy chọn)
               </label>
               <textarea
@@ -266,7 +266,7 @@ export function RSVPSection({ defaultName }: RSVPSectionProps) {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full flex items-center justify-center gap-2 py-3.5 px-4 rounded-lg transition-all duration-300 hover:scale-[1.02] disabled:opacity-60 disabled:cursor-not-allowed"
+              className="w-full flex items-center justify-center gap-2 py-3.5 px-4 rounded-lg transition-all duration-300 hover:scale-[1.02] disabled:opacity-25 disabled:cursor-not-allowed"
               style={{
                 background:
                   "linear-gradient(135deg, var(--wedding-accent) 0%, #b8963d 100%)",

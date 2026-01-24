@@ -104,7 +104,7 @@ export function CountdownSection({ targetDate }: CountdownSectionProps) {
           BOTANICAL DECORATION — TOP LEFT
           ═══════════════════════════════════════════════ */}
       <motion.div
-        className="absolute top-8 left-4 w-20 h-28 pointer-events-none opacity-60"
+        className="absolute top-8 left-4 w-20 h-28 pointer-events-none opacity-25"
         initial={{ opacity: 0, x: -20 }}
         whileInView={{ opacity: 0.6, x: 0 }}
         viewport={{ once: true }}
@@ -113,14 +113,14 @@ export function CountdownSection({ targetDate }: CountdownSectionProps) {
         <svg viewBox="0 0 80 110" fill="none" className="w-full h-full">
           <path
             d="M5 0 Q15 30 12 60 Q8 90 20 110"
-            stroke="#7c9a73"
+            stroke="#A8B5A0"
             strokeWidth="1"
             fill="none"
             opacity="0.6"
           />
           <path
             d="M10 30 Q30 40 40 30"
-            stroke="#7c9a73"
+            stroke="#A8B5A0"
             strokeWidth="0.8"
             fill="none"
             opacity="0.5"
@@ -130,7 +130,7 @@ export function CountdownSection({ targetDate }: CountdownSectionProps) {
             cy="35"
             rx="8"
             ry="3"
-            fill="#7c9a73"
+            fill="#A8B5A0"
             fillOpacity="0.25"
             transform="rotate(-20 28 35)"
           />
@@ -139,7 +139,7 @@ export function CountdownSection({ targetDate }: CountdownSectionProps) {
             cy="55"
             rx="6"
             ry="2.5"
-            fill="#7c9a73"
+            fill="#A8B5A0"
             fillOpacity="0.2"
             transform="rotate(10 15 55)"
           />
@@ -150,7 +150,7 @@ export function CountdownSection({ targetDate }: CountdownSectionProps) {
           BOTANICAL DECORATION — TOP RIGHT
           ═══════════════════════════════════════════════ */}
       <motion.div
-        className="absolute top-8 right-4 w-20 h-28 pointer-events-none opacity-60"
+        className="absolute top-8 right-4 w-20 h-28 pointer-events-none opacity-25"
         initial={{ opacity: 0, x: 20 }}
         whileInView={{ opacity: 0.6, x: 0 }}
         viewport={{ once: true }}
@@ -164,14 +164,14 @@ export function CountdownSection({ targetDate }: CountdownSectionProps) {
         >
           <path
             d="M5 0 Q15 30 12 60 Q8 90 20 110"
-            stroke="#7c9a73"
+            stroke="#A8B5A0"
             strokeWidth="1"
             fill="none"
             opacity="0.6"
           />
           <path
             d="M10 30 Q30 40 40 30"
-            stroke="#7c9a73"
+            stroke="#A8B5A0"
             strokeWidth="0.8"
             fill="none"
             opacity="0.5"
@@ -181,7 +181,7 @@ export function CountdownSection({ targetDate }: CountdownSectionProps) {
             cy="35"
             rx="8"
             ry="3"
-            fill="#7c9a73"
+            fill="#A8B5A0"
             fillOpacity="0.25"
             transform="rotate(-20 28 35)"
           />
@@ -190,7 +190,7 @@ export function CountdownSection({ targetDate }: CountdownSectionProps) {
             cy="55"
             rx="6"
             ry="2.5"
-            fill="#7c9a73"
+            fill="#A8B5A0"
             fillOpacity="0.2"
             transform="rotate(10 15 55)"
           />
@@ -205,10 +205,10 @@ export function CountdownSection({ targetDate }: CountdownSectionProps) {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 1.2 }}
         >
           {/* Small caps tagline */}
-          <p className="font-body text-[10px] tracking-[0.35em] text-[var(--wedding-primary)] uppercase mb-4 opacity-60">
+          <p className="font-body text-[10px] tracking-[0.35em] text-[var(--wedding-primary)] uppercase mb-4 opacity-25">
             We Are Getting Married
           </p>
 
@@ -238,10 +238,10 @@ export function CountdownSection({ targetDate }: CountdownSectionProps) {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.8, delay: 0.2 }}
+        transition={{ duration: 1.2, delay: 0.2 }}
       >
         <div
-          className="bg-white rounded-xl p-6 relative overflow-hidden"
+          className="bg-white rounded-xl p-8 relative overflow-hidden"
           style={{
             boxShadow: `
               0 20px 40px -10px rgba(61, 53, 46, 0.12),
@@ -249,11 +249,7 @@ export function CountdownSection({ targetDate }: CountdownSectionProps) {
             `,
           }}
         >
-          {/* Corner decorations */}
-          <div className="absolute top-2 left-2 w-6 h-6 border-t border-l border-[var(--wedding-accent)]/30 rounded-tl" />
-          <div className="absolute top-2 right-2 w-6 h-6 border-t border-r border-[var(--wedding-accent)]/30 rounded-tr" />
-          <div className="absolute bottom-2 left-2 w-6 h-6 border-b border-l border-[var(--wedding-accent)]/30 rounded-bl" />
-          <div className="absolute bottom-2 right-2 w-6 h-6 border-b border-r border-[var(--wedding-accent)]/30 rounded-br" />
+          {/* Korean Minimal: No corner decorations */}
 
           {/* Month title */}
           <p className="text-center font-display text-2xl text-[var(--wedding-secondary)] mb-4 uppercase tracking-[0.2em]">

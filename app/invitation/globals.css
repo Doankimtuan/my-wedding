@@ -1,34 +1,35 @@
 /* Wedding Invitation Theme */
 
-/* Wedding Color Tokens */
+/* Wedding Color Tokens — Korean Minimal */
 :root {
-  /* Core Colors — Refined for Luxury */
-  --wedding-primary: #7a6b5d; /* Warm bronze — slightly darker */
-  --wedding-secondary: #3d352e; /* Deep charcoal-brown — never pure black */
-  --wedding-accent: #c5a86d; /* Muted gold — metallic undertone */
-  --wedding-bg-paper: #faf7f3; /* Warm ivory background */
-  --wedding-bg-white: #ffffff; /* Card background */
-  --wedding-text-muted: #9a918a; /* Warm muted text */
-  --wedding-border: #e8e4df; /* Soft warm grey borders */
+  /* Core Colors — Korean Minimal Palette */
+  --wedding-primary: #9a938a; /* Warm Gray (muted text) */
+  --wedding-secondary: #3d352e; /* Charcoal Soft (main text) */
+  --wedding-accent: #c9b896; /* Muted Gold (accent) */
+  --wedding-bg-paper: #fdfbf8; /* Pure Ivory (main background) */
+  --wedding-bg-white: #faf8f5; /* Warm White (card background) */
+  --wedding-text-muted: #9a938a; /* Warm Gray (secondary text) */
+  --wedding-border: #e8e2da; /* Faded Linen (borders) */
 
   /* Semantic Colors */
-  --wedding-success: #7c9a73;
-  --wedding-error: #c17e7e;
+  --wedding-success: #a8b5a0; /* Sage Green (botanical) */
+  --wedding-error: #e8d5d0; /* Blush Rose */
 
-  /* Shadows — Multi-layer for Depth */
-  --wedding-shadow-sm: 0 2px 8px rgba(61, 53, 46, 0.06);
-  --wedding-shadow-md: 0 4px 16px rgba(61, 53, 46, 0.1);
-  --wedding-shadow-lg: 0 8px 32px rgba(61, 53, 46, 0.12);
-  --wedding-shadow-xl: 0 16px 64px rgba(61, 53, 46, 0.16);
-  /* Premium envelope shadow — soft, layered */
-  --wedding-shadow-envelope: 0 25px 50px -12px rgba(61, 53, 46, 0.25),
-    0 12px 24px -8px rgba(61, 53, 46, 0.15), 0 4px 8px rgba(61, 53, 46, 0.08);
+  /* Shadows — Korean Minimal (ultra subtle) */
+  --wedding-shadow-sm: 0 2px 8px rgba(61, 53, 46, 0.03);
+  --wedding-shadow-md: 0 4px 16px rgba(61, 53, 46, 0.04);
+  --wedding-shadow-lg: 0 8px 32px rgba(61, 53, 46, 0.04);
+  --wedding-shadow-xl: 0 16px 64px rgba(61, 53, 46, 0.05);
+  /* Premium envelope shadow — softer for minimal aesthetic */
+  --wedding-shadow-envelope:
+    0 20px 40px -12px rgba(61, 53, 46, 0.06),
+    0 8px 16px -6px rgba(61, 53, 46, 0.04);
 
-  /* Animation */
-  --wedding-ease: cubic-bezier(0.22, 1, 0.36, 1);
-  --wedding-duration-fast: 0.2s;
-  --wedding-duration-normal: 0.4s;
-  --wedding-duration-slow: 0.6s;
+  /* Animation — Slower for Korean aesthetic */
+  --wedding-ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --wedding-duration-fast: 0.4s;
+  --wedding-duration-normal: 0.8s;
+  --wedding-duration-slow: 1.2s;
 
   /* Spacing */
   --wedding-space-xs: 4px;
@@ -40,22 +41,30 @@
   --wedding-space-3xl: 64px;
 }
 
-/* Typography Classes */
+/* Typography Classes - Korean Minimal */
 .font-display {
-  font-family: var(--font-cormorant), "Cormorant Garamond", serif;
+  font-family: var(--font-playfair), "Playfair Display", serif;
+  font-weight: 400; /* Regular - lightest available for Playfair */
+  line-height: 1.3; /* Tighter for headings */
+  letter-spacing: 0.02em; /* Slight tracking */
 }
 
 .font-script {
   font-family: var(--font-dancing), "Dancing Script", cursive;
+  font-weight: 300;
 }
 
 .font-body {
   font-family: var(--font-lora), "Lora", serif;
+  font-weight: 300; /* Light weight */
+  line-height: 1.85; /* Generous breathing room */
+  letter-spacing: 0.01em; /* Subtle expansion */
 }
 
 .font-serif-numbers {
   font-family: var(--font-crimson), "Crimson Text", serif;
   font-variant-numeric: lining-nums;
+  font-weight: 300; /* Light */
 }
 
 /* Wedding Container */
@@ -79,7 +88,8 @@
   display: flex;
   justify-content: center;
   background-color: #f0ebe5;
-  background-image: radial-gradient(
+  background-image:
+    radial-gradient(
       circle at 20% 30%,
       rgba(212, 184, 149, 0.15) 0%,
       transparent 50%
@@ -105,7 +115,7 @@
   width: 100%;
   height: 100%;
   pointer-events: none;
-  opacity: 0.03;
+  opacity: 0.02;
   z-index: 1000;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 }
@@ -148,7 +158,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.3),
+  box-shadow:
+    inset 0 2px 4px rgba(255, 255, 255, 0.3),
     0 4px 8px rgba(0, 0, 0, 0.2);
   z-index: 10;
 }
@@ -184,7 +195,8 @@
 .scroll-reveal {
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity var(--wedding-duration-slow) var(--wedding-ease),
+  transition:
+    opacity var(--wedding-duration-slow) var(--wedding-ease),
     transform var(--wedding-duration-slow) var(--wedding-ease);
 }
 
@@ -318,7 +330,8 @@
   font-family: "Montserrat", sans-serif;
   font-size: 14px;
   color: var(--wedding-secondary);
-  transition: border-color var(--wedding-duration-fast) var(--wedding-ease),
+  transition:
+    border-color var(--wedding-duration-fast) var(--wedding-ease),
     box-shadow var(--wedding-duration-fast) var(--wedding-ease);
 }
 
@@ -493,7 +506,8 @@
   height: 46px;
   border-radius: 999px;
   background: radial-gradient(circle at 35% 30%, #b57f56, #7f5536 60%);
-  box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.14),
+  box-shadow:
+    inset 0 2px 4px rgba(255, 255, 255, 0.14),
     0 4px 10px rgba(0, 0, 0, 0.18);
   display: flex;
   align-items: center;

@@ -150,7 +150,7 @@ export function MusicPlayer({ shouldAutoPlay = false }: MusicPlayerProps) {
                 />
                 <motion.div
                   animate={{ height: [14, 6, 14] }}
-                  transition={{ repeat: Infinity, duration: 0.8 }}
+                  transition={{ repeat: Infinity, duration: 1.2 }}
                   className="w-1.5 bg-current rounded-full"
                 />
                 <motion.div

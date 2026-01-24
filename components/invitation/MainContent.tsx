@@ -30,7 +30,7 @@ export function MainContent({ guestName }: MainContentProps) {
       className="bg-[var(--wedding-bg-paper)]"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: 0.8 }}
+      transition={{ duration: 1.2 }}
     >
       {/* Hero Section */}
       <HeroSection />

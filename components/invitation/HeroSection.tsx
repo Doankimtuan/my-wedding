@@ -32,48 +32,36 @@ export function HeroSection() {
       ref={containerRef}
       className="relative min-h-[60vh] flex flex-col items-center justify-center overflow-hidden"
     >
-      {/* ═══════════════════════════════════════════════
-          BACKGROUND LAYER — Radial glow + enhanced ambience
-          ═══════════════════════════════════════════════ */}
-      <div className="absolute inset-0 pointer-events-none">
-        {/* Center radial glow */}
-        <div
-          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full"
-          style={{
-            background:
-              "radial-gradient(circle, rgba(197, 168, 109, 0.08) 0%, transparent 60%)",
-          }}
-        />
-      </div>
+      {/* Korean Minimal: Clean background without radial glow */}
 
       {/* ═══════════════════════════════════════════════
           BOTANICAL DECORATION — TOP LEFT
           ═══════════════════════════════════════════════ */}
       <motion.div
-        className="absolute top-4 left-2 w-28 h-36 pointer-events-none opacity-80"
+        className="absolute top-4 left-2 w-28 h-36 pointer-events-none opacity-25"
         initial={{ opacity: 0, x: -20 }}
-        animate={{ opacity: 0.8, x: 0 }}
+        animate={{ opacity: 0.25, x: 0 }}
         transition={{ duration: 1.2, delay: 0.3 }}
       >
         <svg viewBox="0 0 120 150" fill="none" className="w-full h-full">
           {/* Stems */}
           <path
             d="M10 0 Q25 40 20 80 Q15 110 25 150"
-            stroke="#7c9a73"
+            stroke="#A8B5A0"
             strokeWidth="1.2"
             fill="none"
             opacity="0.7"
           />
           <path
             d="M5 20 Q30 35 45 25"
-            stroke="#7c9a73"
+            stroke="#A8B5A0"
             strokeWidth="1"
             fill="none"
             opacity="0.6"
           />
           <path
             d="M15 50 Q40 60 55 50"
-            stroke="#7c9a73"
+            stroke="#A8B5A0"
             strokeWidth="1"
             fill="none"
             opacity="0.6"
@@ -85,7 +73,7 @@ export function HeroSection() {
             cy="35"
             rx="12"
             ry="5"
-            fill="#7c9a73"
+            fill="#A8B5A0"
             fillOpacity="0.25"
             transform="rotate(-25 30 35)"
           />
@@ -94,7 +82,7 @@ export function HeroSection() {
             cy="55"
             rx="10"
             ry="4"
-            fill="#7c9a73"
+            fill="#A8B5A0"
             fillOpacity="0.3"
             transform="rotate(15 40 55)"
           />
@@ -103,7 +91,7 @@ export function HeroSection() {
             cy="75"
             rx="8"
             ry="3"
-            fill="#7c9a73"
+            fill="#A8B5A0"
             fillOpacity="0.25"
             transform="rotate(-10 22 75)"
           />
@@ -124,9 +112,9 @@ export function HeroSection() {
           BOTANICAL DECORATION — TOP RIGHT (mirrored)
           ═══════════════════════════════════════════════ */}
       <motion.div
-        className="absolute top-4 right-2 w-28 h-36 pointer-events-none opacity-80"
+        className="absolute top-4 right-2 w-28 h-36 pointer-events-none opacity-25"
         initial={{ opacity: 0, x: 20 }}
-        animate={{ opacity: 0.8, x: 0 }}
+        animate={{ opacity: 0.25, x: 0 }}
         transition={{ duration: 1.2, delay: 0.4 }}
       >
         <svg
@@ -137,21 +125,21 @@ export function HeroSection() {
         >
           <path
             d="M10 0 Q25 40 20 80 Q15 110 25 150"
-            stroke="#7c9a73"
+            stroke="#A8B5A0"
             strokeWidth="1.2"
             fill="none"
             opacity="0.7"
           />
           <path
             d="M5 20 Q30 35 45 25"
-            stroke="#7c9a73"
+            stroke="#A8B5A0"
             strokeWidth="1"
             fill="none"
             opacity="0.6"
           />
           <path
             d="M15 50 Q40 60 55 50"
-            stroke="#7c9a73"
+            stroke="#A8B5A0"
             strokeWidth="1"
             fill="none"
             opacity="0.6"
@@ -161,7 +149,7 @@ export function HeroSection() {
             cy="35"
             rx="12"
             ry="5"
-            fill="#7c9a73"
+            fill="#A8B5A0"
             fillOpacity="0.25"
             transform="rotate(-25 30 35)"
           />
@@ -170,7 +158,7 @@ export function HeroSection() {
             cy="55"
             rx="10"
             ry="4"
-            fill="#7c9a73"
+            fill="#A8B5A0"
             fillOpacity="0.3"
             transform="rotate(15 40 55)"
           />
@@ -179,7 +167,7 @@ export function HeroSection() {
             cy="75"
             rx="8"
             ry="3"
-            fill="#7c9a73"
+            fill="#A8B5A0"
             fillOpacity="0.25"
             transform="rotate(-10 22 75)"
           />
@@ -201,9 +189,9 @@ export function HeroSection() {
         className="relative z-10 text-center mb-6"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.2 }}
+        transition={{ duration: 1.2, delay: 0.2 }}
       >
-        <p className="font-body text-[10px] tracking-[0.35em] uppercase text-[var(--wedding-primary)] opacity-70 mb-4">
+        <p className="font-body text-[10px] tracking-[0.35em] uppercase text-[var(--wedding-primary)] opacity-60 mb-4">
           We are getting married
         </p>
 
@@ -245,7 +233,7 @@ export function HeroSection() {
             <div className="relative mb-4">
               {/* Outer glow effect */}
               <div
-                className="absolute -inset-4 rounded-lg opacity-60"
+                className="absolute -inset-4 rounded-lg opacity-25"
                 style={{
                   background:
                     "radial-gradient(ellipse at center, rgba(197, 168, 109, 0.15) 0%, transparent 70%)",
@@ -262,11 +250,11 @@ export function HeroSection() {
                     0 10px 20px -5px rgba(61, 53, 46, 0.1),
                     inset 0 0 0 1px rgba(197, 168, 109, 0.2)
                   `,
-                  border: "6px solid white",
+                  border: "3px solid white",
                 }}
-                animate={{ y: [0, -4, 0] }}
+                animate={{ y: [0, -3, 0] }}
                 transition={{
-                  duration: 5,
+                  duration: 6,
                   repeat: Infinity,
                   ease: "easeInOut",
                 }}
@@ -311,7 +299,7 @@ export function HeroSection() {
             className="flex flex-col items-center justify-center pt-16 sm:pt-20"
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.7 }}
+            transition={{ duration: 1.2, delay: 0.7 }}
           >
             {/* Upper decorative line */}
             <div className="w-[1px] h-8 bg-gradient-to-b from-transparent via-[var(--wedding-accent)]/30 to-[var(--wedding-accent)]/50" />
@@ -342,7 +330,7 @@ export function HeroSection() {
             <div className="relative mb-4">
               {/* Outer glow effect — slightly warmer for bride */}
               <div
-                className="absolute -inset-4 rounded-lg opacity-60"
+                className="absolute -inset-4 rounded-lg opacity-25"
                 style={{
                   background:
                     "radial-gradient(ellipse at center, rgba(212, 168, 168, 0.12) 0%, transparent 70%)",
@@ -359,11 +347,11 @@ export function HeroSection() {
                     0 10px 20px -5px rgba(61, 53, 46, 0.1),
                     inset 0 0 0 1px rgba(197, 168, 109, 0.2)
                   `,
-                  border: "6px solid white",
+                  border: "3px solid white",
                 }}
-                animate={{ y: [0, -4, 0] }}
+                animate={{ y: [0, -3, 0] }}
                 transition={{
-                  duration: 5,
+                  duration: 6,
                   repeat: Infinity,
                   ease: "easeInOut",
                   delay: 0.5,
@@ -443,7 +431,7 @@ export function HeroSection() {
         </div>
 
         {/* Location */}
-        <p className="font-body text-[9px] tracking-[0.3em] text-[var(--wedding-primary)] uppercase opacity-60 mb-4">
+        <p className="font-body text-[9px] tracking-[0.3em] text-[var(--wedding-primary)] uppercase opacity-25 mb-4">
           {info.venue_address
             ? info.venue_address.split(",").slice(-1)[0].trim()
             : "Vietnam"}
@@ -472,22 +460,22 @@ export function HeroSection() {
           BOTANICAL DECORATION — BOTTOM LEFT
           ═══════════════════════════════════════════════ */}
       <motion.div
-        className="absolute bottom-8 left-2 w-24 h-32 pointer-events-none opacity-70"
+        className="absolute bottom-8 left-2 w-24 h-32 pointer-events-none opacity-25"
         initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 0.7, y: 0 }}
+        animate={{ opacity: 0.25, y: 0 }}
         transition={{ duration: 1, delay: 0.6 }}
       >
         <svg viewBox="0 0 100 130" fill="none" className="w-full h-full">
           <path
             d="M10 130 Q20 90 15 50 Q10 20 25 0"
-            stroke="#7c9a73"
+            stroke="#A8B5A0"
             strokeWidth="1"
             fill="none"
             opacity="0.6"
           />
           <path
             d="M5 100 Q30 90 45 100"
-            stroke="#7c9a73"
+            stroke="#A8B5A0"
             strokeWidth="0.8"
             fill="none"
             opacity="0.5"
@@ -497,7 +485,7 @@ export function HeroSection() {
             cy="95"
             rx="10"
             ry="4"
-            fill="#7c9a73"
+            fill="#A8B5A0"
             fillOpacity="0.2"
             transform="rotate(20 35 95)"
           />
@@ -506,7 +494,7 @@ export function HeroSection() {
             cy="60"
             rx="8"
             ry="3"
-            fill="#7c9a73"
+            fill="#A8B5A0"
             fillOpacity="0.25"
             transform="rotate(-15 20 60)"
           />
@@ -523,9 +511,9 @@ export function HeroSection() {
           BOTANICAL DECORATION — BOTTOM RIGHT
           ═══════════════════════════════════════════════ */}
       <motion.div
-        className="absolute bottom-8 right-2 w-24 h-32 pointer-events-none opacity-70"
+        className="absolute bottom-8 right-2 w-24 h-32 pointer-events-none opacity-25"
         initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 0.7, y: 0 }}
+        animate={{ opacity: 0.25, y: 0 }}
         transition={{ duration: 1, delay: 0.7 }}
       >
         <svg
@@ -536,14 +524,14 @@ export function HeroSection() {
         >
           <path
             d="M10 130 Q20 90 15 50 Q10 20 25 0"
-            stroke="#7c9a73"
+            stroke="#A8B5A0"
             strokeWidth="1"
             fill="none"
             opacity="0.6"
           />
           <path
             d="M5 100 Q30 90 45 100"
-            stroke="#7c9a73"
+            stroke="#A8B5A0"
             strokeWidth="0.8"
             fill="none"
             opacity="0.5"
@@ -553,7 +541,7 @@ export function HeroSection() {
             cy="95"
             rx="10"
             ry="4"
-            fill="#7c9a73"
+            fill="#A8B5A0"
             fillOpacity="0.2"
             transform="rotate(20 35 95)"
           />
@@ -562,7 +550,7 @@ export function HeroSection() {
             cy="60"
             rx="8"
             ry="3"
-            fill="#7c9a73"
+            fill="#A8B5A0"
             fillOpacity="0.25"
             transform="rotate(-15 20 60)"
           />

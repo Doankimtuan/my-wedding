@@ -9,9 +9,44 @@ import { WeddingProvider } from "@/components/invitation/WeddingContext";
 import { MusicPlayer } from "@/components/invitation/MusicPlayer";
 import { useState } from "react";
 
+import { createClient } from "@/lib/supabase/client";
+
 function InvitationContent() {
   const searchParams = useSearchParams();
-  const guestName = searchParams.get("guest") || "Quý Khách";
+  // Get guest from direct param OR fetch via slug
+  const guestParam = searchParams.get("guest");
+  const slugParam = searchParams.get("slug");
+
+  const [guestName, setGuestName] = useState(guestParam || "Quý Khách");
+
+  // Fetch guest name from database (checking both slug and guest param)
+  useEffect(() => {
+    async function fetchGuestName() {
+      // Prioritize explicit slug param, otherwise try using guest param as slug
+      const lookupSlug = slugParam || guestParam;
+
+      if (!lookupSlug) return;
+
+      try {
+        const supabase = createClient();
+        const { data, error } = await supabase
+          .from("guests")
+          .select("name")
+          .eq("slug", lookupSlug)
+          .single();
+
+        if (data && !error) {
+          setGuestName(data.name);
+        } else {
+          setGuestName("Quý Khách");
+        }
+      } catch (err) {
+        console.error("Error fetching guest:", err);
+      }
+    }
+
+    fetchGuestName();
+  }, [slugParam, guestParam]);
 
   // Lock scroll initially
   const [canScroll, setCanScroll] = useState(false);

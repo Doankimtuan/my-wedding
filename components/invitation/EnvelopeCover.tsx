@@ -1,6 +1,4 @@
-"use client";
-
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { useState, useRef, useEffect } from "react";
 import gsap from "gsap";
 import { useWedding, defaultWeddingInfo } from "./WeddingContext";
@@ -23,10 +21,6 @@ export const EnvelopeCover = ({ guestName, onOpen }: GreetingCardProps) => {
   const day = weddingDate.getDate().toString().padStart(2, "0");
   const month = (weddingDate.getMonth() + 1).toString().padStart(2, "0");
   const year = weddingDate.getFullYear();
-
-  // Get initials for seal
-  const groomInitial = info.groom_name.charAt(0).toUpperCase();
-  const brideInitial = info.bride_name.charAt(0).toUpperCase();
 
   // Refs for GSAP animations
   const flapRef = useRef<HTMLDivElement>(null);
@@ -63,7 +57,7 @@ export const EnvelopeCover = ({ guestName, onOpen }: GreetingCardProps) => {
         duration: 0.7,
         ease: "power2.inOut",
       },
-      "-=0.1"
+      "-=0.1",
     );
 
     // Drop flap z-index so photo appears in front of opened flap
@@ -74,10 +68,10 @@ export const EnvelopeCover = ({ guestName, onOpen }: GreetingCardProps) => {
       photoRef.current,
       {
         y: "-100px",
-        duration: 0.8,
+        duration: 1.2,
         ease: "power3.out",
       },
-      "-=0.4"
+      "-=0.4",
     );
   }, [isOpen]);
 
@@ -86,42 +80,9 @@ export const EnvelopeCover = ({ guestName, onOpen }: GreetingCardProps) => {
       className="min-h-screen flex flex-col items-center justify-between py-10 px-6 bg-[var(--wedding-bg-paper)] relative overflow-hidden"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: 0.8 }}
+      transition={{ duration: 1.2 }}
     >
-      {/* ═══════════════════════════════════════════════
-          FLOATING PARTICLES EFFECT - Subtle sparkles
-          ═══════════════════════════════════════════════ */}
-      {[...Array(12)].map((_, i) => (
-        <motion.div
-          key={`particle-${i}`}
-          className="absolute pointer-events-none rounded-full"
-          style={{
-            width: `${3 + (i % 4) * 2}px`,
-            height: `${3 + (i % 4) * 2}px`,
-            left: `${5 + ((i * 8) % 90)}%`,
-            top: `${10 + ((i * 13) % 80)}%`,
-            background:
-              i % 3 === 0
-                ? "rgba(212, 184, 149, 0.4)" // Gold
-                : i % 3 === 1
-                ? "rgba(255, 255, 255, 0.5)" // White
-                : "rgba(180, 160, 140, 0.3)", // Soft brown
-            boxShadow: "0 0 4px rgba(255, 255, 255, 0.3)",
-          }}
-          animate={{
-            y: [0, -30 - (i % 3) * 15, 0],
-            x: [0, i % 2 === 0 ? 10 : -10, 0],
-            opacity: [0.3, 0.6, 0.3],
-            scale: [1, 1.2, 1],
-          }}
-          transition={{
-            duration: 6 + (i % 4) * 2,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: i * 0.5,
-          }}
-        />
-      ))}
+      {/* Korean Minimal: Clean background without particles */}
 
       {/* ═══════════════════════════════════════════════
           FLORAL DECORATION: TOP LEFT
@@ -131,25 +92,25 @@ export const EnvelopeCover = ({ guestName, onOpen }: GreetingCardProps) => {
           {/* Stems */}
           <path
             d="M0 0 Q30 60 25 120 Q20 150 30 180"
-            stroke="#7c9a73"
+            stroke="#A8B5A0"
             strokeWidth="1.5"
             fill="none"
           />
           <path
             d="M5 20 Q40 50 60 35"
-            stroke="#7c9a73"
+            stroke="#A8B5A0"
             strokeWidth="1.2"
             fill="none"
           />
           <path
             d="M0 40 Q35 70 70 60"
-            stroke="#7c9a73"
+            stroke="#A8B5A0"
             strokeWidth="1.2"
             fill="none"
           />
           <path
             d="M10 80 Q30 100 55 95"
-            stroke="#7c9a73"
+            stroke="#A8B5A0"
             strokeWidth="1"
             fill="none"
           />
@@ -160,7 +121,7 @@ export const EnvelopeCover = ({ guestName, onOpen }: GreetingCardProps) => {
             cy="50"
             rx="8"
             ry="4"
-            fill="#7c9a73"
+            fill="#A8B5A0"
             fillOpacity="0.35"
             transform="rotate(-30 35 50)"
           />
@@ -169,7 +130,7 @@ export const EnvelopeCover = ({ guestName, onOpen }: GreetingCardProps) => {
             cy="85"
             rx="7"
             ry="3"
-            fill="#7c9a73"
+            fill="#A8B5A0"
             fillOpacity="0.35"
             transform="rotate(-20 25 85)"
           />
@@ -178,7 +139,7 @@ export const EnvelopeCover = ({ guestName, onOpen }: GreetingCardProps) => {
             cy="70"
             rx="6"
             ry="3"
-            fill="#7c9a73"
+            fill="#A8B5A0"
             fillOpacity="0.4"
             transform="rotate(15 50 70)"
           />
@@ -253,10 +214,10 @@ export const EnvelopeCover = ({ guestName, onOpen }: GreetingCardProps) => {
       <div className="text-center z-10 w-full pt-8">
         {/* Elegant small caps tagline */}
         <motion.p
-          className="font-body text-[10px] tracking-[0.35em] uppercase text-[var(--wedding-primary)] mb-8 opacity-70"
+          className="font-body text-[10px] tracking-[0.35em] uppercase text-[var(--wedding-primary)] mb-8 opacity-60"
           initial={{ opacity: 0 }}
           animate={{ opacity: 0.7 }}
-          transition={{ delay: 0.2, duration: 0.8 }}
+          transition={{ delay: 0.2, duration: 1.2 }}
         >
           We invite you to celebrate
         </motion.p>
@@ -266,7 +227,7 @@ export const EnvelopeCover = ({ guestName, onOpen }: GreetingCardProps) => {
           className="relative"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ delay: 0.4, duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
         >
           <h1 className="font-display text-4xl md:text-6xl text-[var(--wedding-secondary)] leading-[1.1] tracking-wide">
             {info.groom_name}
@@ -284,7 +245,7 @@ export const EnvelopeCover = ({ guestName, onOpen }: GreetingCardProps) => {
           className="font-body text-xs tracking-[0.2em] text-[var(--wedding-text-muted)] mt-6 mb-2 uppercase"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.8, duration: 0.6 }}
+          transition={{ delay: 0.8, duration: 1 }}
         >
           {day} · {month} · {year}
         </motion.p>
@@ -306,7 +267,7 @@ export const EnvelopeCover = ({ guestName, onOpen }: GreetingCardProps) => {
           }
           transition={
             isOpen
-              ? { duration: 0.8, ease: "easeOut" }
+              ? { duration: 1.2, ease: "easeOut" }
               : {
                   duration: 4,
                   repeat: Infinity,
@@ -354,7 +315,7 @@ export const EnvelopeCover = ({ guestName, onOpen }: GreetingCardProps) => {
             }
             transition={
               isOpen
-                ? { duration: 0.6 }
+                ? { duration: 1 }
                 : {
                     duration: 4,
                     repeat: Infinity,
@@ -582,38 +543,7 @@ export const EnvelopeCover = ({ guestName, onOpen }: GreetingCardProps) => {
               </span>
             </div>
 
-            {/* RISING HEARTS */}
-            <AnimatePresence>
-              {isOpen &&
-                [0, 1, 2, 3, 4].map((i) => (
-                  <motion.span
-                    key={i}
-                    className="absolute left-1/2 text-3xl pointer-events-none"
-                    style={{
-                      top: "15%",
-                      zIndex: 50,
-                      willChange: "transform, opacity",
-                      color: i % 2 === 0 ? "#e74c4c" : "#ff7b7b",
-                    }}
-                    initial={{ y: 0, x: 0, opacity: 0, scale: 0.3 }}
-                    animate={{
-                      y: -220 - i * 40,
-                      x: (i - 2) * 50,
-                      opacity: [0, 1, 1, 1, 0],
-                      scale: [0.3, 1.4, 1.3, 1.2, 0.8],
-                      rotate: [0, i % 2 === 0 ? 15 : -15, 0],
-                    }}
-                    exit={{ opacity: 0 }}
-                    transition={{
-                      duration: 4,
-                      delay: 0.6 + i * 0.25,
-                      ease: [0.25, 0.46, 0.45, 0.94],
-                    }}
-                  >
-                    ❤
-                  </motion.span>
-                ))}
-            </AnimatePresence>
+            {/* Korean Minimal: No rising hearts - too playful */}
           </div>
         </motion.div>
       </div>
@@ -625,9 +555,9 @@ export const EnvelopeCover = ({ guestName, onOpen }: GreetingCardProps) => {
         className="relative w-full text-center z-10 pb-6"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.5, duration: 0.6 }}
+        transition={{ delay: 0.5, duration: 1 }}
       >
-        <p className="font-body text-[10px] tracking-[0.3em] uppercase text-[var(--wedding-primary)] mb-3 opacity-70">
+        <p className="font-body text-[10px] tracking-[0.3em] uppercase text-[var(--wedding-primary)] mb-3 opacity-60">
           Trân trọng kính mời
         </p>
 
@@ -646,24 +576,24 @@ export const EnvelopeCover = ({ guestName, onOpen }: GreetingCardProps) => {
       {/* ═══════════════════════════════════════════════
           FLORAL DECORATION: BOTTOM RIGHT
           ═══════════════════════════════════════════════ */}
-      <div className="absolute bottom-0 right-0 w-40 h-48 pointer-events-none opacity-90">
+      <div className="absolute bottom-0 right-0 w-40 h-48 pointer-events-none opacity-30">
         <svg viewBox="0 0 160 200" fill="none" className="w-full h-full">
           {/* Main curved stem */}
           <path
             d="M160 200 Q120 140 130 80 Q140 40 120 0"
-            stroke="#7c9a73"
+            stroke="#A8B5A0"
             strokeWidth="1.5"
             fill="none"
           />
           <path
             d="M140 180 Q100 140 80 160"
-            stroke="#7c9a73"
+            stroke="#A8B5A0"
             strokeWidth="1.2"
             fill="none"
           />
           <path
             d="M155 150 Q110 120 95 140"
-            stroke="#7c9a73"
+            stroke="#A8B5A0"
             strokeWidth="1"
             fill="none"
           />
@@ -674,7 +604,7 @@ export const EnvelopeCover = ({ guestName, onOpen }: GreetingCardProps) => {
             cy="60"
             rx="10"
             ry="5"
-            fill="#7c9a73"
+            fill="#A8B5A0"
             fillOpacity="0.35"
             transform="rotate(60 125 60)"
           />
@@ -683,7 +613,7 @@ export const EnvelopeCover = ({ guestName, onOpen }: GreetingCardProps) => {
             cy="100"
             rx="8"
             ry="4"
-            fill="#7c9a73"
+            fill="#A8B5A0"
             fillOpacity="0.35"
             transform="rotate(45 135 100)"
           />
@@ -692,7 +622,7 @@ export const EnvelopeCover = ({ guestName, onOpen }: GreetingCardProps) => {
             cy="150"
             rx="9"
             ry="4"
-            fill="#7c9a73"
+            fill="#A8B5A0"
             fillOpacity="0.4"
             transform="rotate(-20 100 150)"
           />

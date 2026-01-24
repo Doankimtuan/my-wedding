@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import {
-  Cormorant_Garamond,
+  Playfair_Display,
   Lora,
   Dancing_Script,
   Crimson_Text,
@@ -8,10 +8,10 @@ import {
 import "../globals.css";
 import "./globals.css";
 
-const cormorant = Cormorant_Garamond({
-  variable: "--font-cormorant",
+const playfair = Playfair_Display({
+  variable: "--font-playfair",
   subsets: ["latin", "vietnamese"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["400", "500", "600", "700"], // Playfair doesn't support 300
 });
 
 const lora = Lora({
@@ -96,7 +96,7 @@ export default function InvitationLayout({
 }) {
   return (
     <div
-      className={`${cormorant.variable} ${lora.variable} ${dancingScript.variable} ${crimson.variable}`}
+      className={`${playfair.variable} ${lora.variable} ${dancingScript.variable} ${crimson.variable}`}
     >
       {/* Noise texture overlay */}
       <div className="wedding-noise" aria-hidden="true" />

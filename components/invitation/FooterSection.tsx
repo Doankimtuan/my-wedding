@@ -17,21 +17,21 @@ export function FooterSection() {
   const formattedDate = `${day}.${month}.${year}`;
 
   return (
-    <footer className="relative px-6 py-16 text-center bg-gradient-to-b from-[var(--wedding-bg-paper)] to-[#F5F0E8] overflow-hidden">
+    <footer className="relative px-6 py-20 text-center bg-gradient-to-b from-[var(--wedding-bg-paper)] to-[#F5F0E8] overflow-hidden">
       {/* ═══════════════════════════════════════════════
           BOTANICAL DECORATION — LEFT
           ═══════════════════════════════════════════════ */}
       <motion.div
-        className="absolute top-8 left-0 w-20 h-32 pointer-events-none opacity-40"
+        className="absolute top-8 left-0 w-20 h-32 pointer-events-none opacity-25"
         initial={{ opacity: 0, x: -20 }}
-        whileInView={{ opacity: 0.4, x: 0 }}
+        whileInView={{ opacity: 0.25, x: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 1 }}
       >
         <svg viewBox="0 0 70 130" fill="none" className="w-full h-full">
           <path
             d="M0 0 Q15 30 12 65 Q9 100 22 130"
-            stroke="#7c9a73"
+            stroke="#A8B5A0"
             strokeWidth="1"
             fill="none"
             opacity="0.6"
@@ -41,7 +41,7 @@ export function FooterSection() {
             cy="40"
             rx="9"
             ry="4"
-            fill="#7c9a73"
+            fill="#A8B5A0"
             fillOpacity="0.25"
             transform="rotate(-20 20 40)"
           />
@@ -50,7 +50,7 @@ export function FooterSection() {
             cy="75"
             rx="7"
             ry="3"
-            fill="#7c9a73"
+            fill="#A8B5A0"
             fillOpacity="0.2"
             transform="rotate(12 14 75)"
           />
@@ -59,7 +59,7 @@ export function FooterSection() {
             cy="100"
             rx="5"
             ry="2"
-            fill="#7c9a73"
+            fill="#A8B5A0"
             fillOpacity="0.15"
             transform="rotate(-8 18 100)"
           />
@@ -70,9 +70,9 @@ export function FooterSection() {
           BOTANICAL DECORATION — RIGHT
           ═══════════════════════════════════════════════ */}
       <motion.div
-        className="absolute top-8 right-0 w-20 h-32 pointer-events-none opacity-40"
+        className="absolute top-8 right-0 w-20 h-32 pointer-events-none opacity-25"
         initial={{ opacity: 0, x: 20 }}
-        whileInView={{ opacity: 0.4, x: 0 }}
+        whileInView={{ opacity: 0.25, x: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 1, delay: 0.1 }}
       >
@@ -84,7 +84,7 @@ export function FooterSection() {
         >
           <path
             d="M0 0 Q15 30 12 65 Q9 100 22 130"
-            stroke="#7c9a73"
+            stroke="#A8B5A0"
             strokeWidth="1"
             fill="none"
             opacity="0.6"
@@ -94,7 +94,7 @@ export function FooterSection() {
             cy="40"
             rx="9"
             ry="4"
-            fill="#7c9a73"
+            fill="#A8B5A0"
             fillOpacity="0.25"
             transform="rotate(-20 20 40)"
           />
@@ -103,7 +103,7 @@ export function FooterSection() {
             cy="75"
             rx="7"
             ry="3"
-            fill="#7c9a73"
+            fill="#A8B5A0"
             fillOpacity="0.2"
             transform="rotate(12 14 75)"
           />
@@ -112,7 +112,7 @@ export function FooterSection() {
             cy="100"
             rx="5"
             ry="2"
-            fill="#7c9a73"
+            fill="#A8B5A0"
             fillOpacity="0.15"
             transform="rotate(-8 18 100)"
           />
@@ -127,7 +127,7 @@ export function FooterSection() {
         initial={{ opacity: 0, scale: 0.9 }}
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
+        transition={{ duration: 1.2 }}
       >
         <svg
           viewBox="0 0 200 200"
@@ -254,7 +254,7 @@ export function FooterSection() {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.6, delay: 0.1 }}
+        transition={{ duration: 1, delay: 0.1 }}
       >
         <h3 className="font-script text-5xl text-[var(--wedding-accent)] mb-4 tracking-wide">
           Thank You
@@ -266,7 +266,7 @@ export function FooterSection() {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.6, delay: 0.2 }}
+        transition={{ duration: 1, delay: 0.2 }}
       >
         Cảm ơn bạn đã dành thời gian xem thiệp cưới của chúng tôi.
         <br />
@@ -281,7 +281,7 @@ export function FooterSection() {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.6, delay: 0.3 }}
+        transition={{ duration: 1, delay: 0.3 }}
       >
         <span className="font-script text-2xl text-[var(--wedding-secondary)]">
           {info.groom_name}
@@ -306,7 +306,7 @@ export function FooterSection() {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.6, delay: 0.4 }}
+        transition={{ duration: 1, delay: 0.4 }}
       >
         <div className="w-10 h-[1px] bg-gradient-to-r from-transparent to-[var(--wedding-accent)]/40" />
         <p className="font-serif-numbers text-sm text-[var(--wedding-text-muted)] tracking-[0.25em]">
@@ -323,7 +323,7 @@ export function FooterSection() {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.6, delay: 0.5 }}
+        transition={{ duration: 1, delay: 0.5 }}
       >
         {/* Ornamental top border */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 flex items-center gap-4">
@@ -332,7 +332,7 @@ export function FooterSection() {
             width="8"
             height="8"
             viewBox="0 0 8 8"
-            className="text-[var(--wedding-accent)] opacity-40"
+            className="text-[var(--wedding-accent)] opacity-25"
           >
             <path
               d="M4 0 L5 3 L8 4 L5 5 L4 8 L3 5 L0 4 L3 3 Z"

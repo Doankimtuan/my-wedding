@@ -43,19 +43,19 @@ export function EventSection() {
   };
 
   return (
-    <section className="relative px-6 py-16 text-center overflow-hidden bg-[var(--wedding-bg-paper)]">
+    <section className="relative px-6 py-20 text-center overflow-hidden bg-[var(--wedding-bg-paper)]">
       {/* Botanical decorations */}
       <motion.div
-        className="absolute top-8 left-0 w-16 h-32 pointer-events-none opacity-40"
+        className="absolute top-8 left-0 w-16 h-32 pointer-events-none opacity-25"
         initial={{ opacity: 0, x: -20 }}
-        whileInView={{ opacity: 0.4, x: 0 }}
+        whileInView={{ opacity: 0.25, x: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 1 }}
       >
         <svg viewBox="0 0 60 120" fill="none" className="w-full h-full">
           <path
             d="M0 0 Q15 30 10 60 Q5 90 15 120"
-            stroke="#7c9a73"
+            stroke="#A8B5A0"
             strokeWidth="1"
             fill="none"
             opacity="0.6"
@@ -65,7 +65,7 @@ export function EventSection() {
             cy="40"
             rx="8"
             ry="3"
-            fill="#7c9a73"
+            fill="#A8B5A0"
             fillOpacity="0.25"
             transform="rotate(-15 18 40)"
           />
@@ -74,7 +74,7 @@ export function EventSection() {
             cy="70"
             rx="6"
             ry="2.5"
-            fill="#7c9a73"
+            fill="#A8B5A0"
             fillOpacity="0.2"
             transform="rotate(10 12 70)"
           />
@@ -82,9 +82,9 @@ export function EventSection() {
       </motion.div>
 
       <motion.div
-        className="absolute top-8 right-0 w-16 h-32 pointer-events-none opacity-40"
+        className="absolute top-8 right-0 w-16 h-32 pointer-events-none opacity-25"
         initial={{ opacity: 0, x: 20 }}
-        whileInView={{ opacity: 0.4, x: 0 }}
+        whileInView={{ opacity: 0.25, x: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 1, delay: 0.1 }}
       >
@@ -96,7 +96,7 @@ export function EventSection() {
         >
           <path
             d="M0 0 Q15 30 10 60 Q5 90 15 120"
-            stroke="#7c9a73"
+            stroke="#A8B5A0"
             strokeWidth="1"
             fill="none"
             opacity="0.6"
@@ -106,7 +106,7 @@ export function EventSection() {
             cy="40"
             rx="8"
             ry="3"
-            fill="#7c9a73"
+            fill="#A8B5A0"
             fillOpacity="0.25"
             transform="rotate(-15 18 40)"
           />
@@ -115,7 +115,7 @@ export function EventSection() {
             cy="70"
             rx="6"
             ry="2.5"
-            fill="#7c9a73"
+            fill="#A8B5A0"
             fillOpacity="0.2"
             transform="rotate(10 12 70)"
           />
@@ -126,7 +126,7 @@ export function EventSection() {
       <div className="mb-8">
         <div className="flex items-center justify-center gap-3 mb-2">
           <div className="w-10 h-[1px] bg-gradient-to-r from-transparent to-[var(--wedding-accent)]/40" />
-          <span className="font-body text-[10px] tracking-[0.35em] uppercase text-[var(--wedding-accent)] opacity-60">
+          <span className="font-body text-[10px] tracking-[0.35em] uppercase text-[var(--wedding-accent)] opacity-25">
             Thông tin sự kiện
           </span>
           <div className="w-10 h-[1px] bg-gradient-to-l from-transparent to-[var(--wedding-accent)]/40" />
@@ -138,9 +138,9 @@ export function EventSection() {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
+        transition={{ duration: 1 }}
       >
-        <p className="font-body text-sm text-[var(--wedding-primary)] leading-relaxed mb-6 opacity-70">
+        <p className="font-body text-sm text-[var(--wedding-primary)] leading-relaxed mb-6 opacity-60">
           Đến dự buổi tiệc chung vui
           <br />
           cùng gia đình chúng tôi vào lúc
@@ -189,7 +189,7 @@ export function EventSection() {
           </motion.div>
         </div>
 
-        <p className="font-body text-xs text-[var(--wedding-text-muted)] italic mb-8 opacity-60">
+        <p className="font-body text-xs text-[var(--wedding-text-muted)] italic mb-8 opacity-25">
           (Nhằm ngày 20 tháng 11 năm Ất Tỵ)
         </p>
       </motion.div>
@@ -218,10 +218,10 @@ export function EventSection() {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.6, delay: 0.2 }}
+        transition={{ duration: 1, delay: 0.2 }}
       >
         <div
-          className="bg-white rounded-xl p-6 relative overflow-hidden"
+          className="bg-white rounded-xl p-8 relative overflow-hidden"
           style={{
             boxShadow: `
               0 20px 40px -10px rgba(61, 53, 46, 0.1),
@@ -229,13 +229,9 @@ export function EventSection() {
             `,
           }}
         >
-          {/* Corner decorations */}
-          <div className="absolute top-2 left-2 w-5 h-5 border-t border-l border-[var(--wedding-accent)]/20 rounded-tl" />
-          <div className="absolute top-2 right-2 w-5 h-5 border-t border-r border-[var(--wedding-accent)]/20 rounded-tr" />
-          <div className="absolute bottom-2 left-2 w-5 h-5 border-b border-l border-[var(--wedding-accent)]/20 rounded-bl" />
-          <div className="absolute bottom-2 right-2 w-5 h-5 border-b border-r border-[var(--wedding-accent)]/20 rounded-br" />
+          {/* Korean Minimal: No corner decorations */}
 
-          <p className="font-body text-[10px] tracking-[0.25em] text-[var(--wedding-primary)] uppercase mb-3 opacity-60">
+          <p className="font-body text-[10px] tracking-[0.25em] text-[var(--wedding-primary)] uppercase mb-3 opacity-25">
             Hôn lễ được cử hành tại
           </p>
 
@@ -247,16 +243,10 @@ export function EventSection() {
             {venueAddress}
           </p>
 
-          {/* Map button */}
+          {/* Map button - Korean Minimal outline style */}
           <button
             onClick={handleOpenMap}
-            className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-lg transition-all duration-300 hover:scale-[1.02]"
-            style={{
-              background:
-                "linear-gradient(135deg, var(--wedding-accent) 0%, #b8963d 100%)",
-              color: "white",
-              boxShadow: "0 4px 12px rgba(197, 168, 109, 0.25)",
-            }}
+            className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-lg border border-[var(--wedding-accent)] bg-transparent text-[var(--wedding-secondary)] transition-all duration-500 hover:bg-[var(--wedding-accent)]/5 hover:scale-[1.01]"
           >
             <MapPin size={16} />
             <span className="font-body text-sm tracking-wider">
@@ -273,7 +263,7 @@ export function EventSection() {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.6, delay: 0.3 }}
+        transition={{ duration: 1, delay: 0.3 }}
       >
         <div className="flex justify-center mb-3">
           <svg
@@ -288,7 +278,7 @@ export function EventSection() {
             />
           </svg>
         </div>
-        <p className="font-body text-sm text-[var(--wedding-text-muted)] italic leading-relaxed opacity-70">
+        <p className="font-body text-sm text-[var(--wedding-text-muted)] italic leading-relaxed opacity-60">
           Gửi đến bạn tấm thiệp cưới đầy yêu thương.
           <br />
           Những ai nhận được lời mời này đều là những người đặc biệt với bọn

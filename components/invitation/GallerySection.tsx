@@ -39,14 +39,14 @@ export function GallerySection() {
         <svg viewBox="0 0 80 110" fill="none" className="w-full h-full">
           <path
             d="M5 0 Q15 30 12 60 Q8 90 20 110"
-            stroke="#7c9a73"
+            stroke="#A8B5A0"
             strokeWidth="1"
             fill="none"
             opacity="0.6"
           />
           <path
             d="M10 30 Q30 40 40 30"
-            stroke="#7c9a73"
+            stroke="#A8B5A0"
             strokeWidth="0.8"
             fill="none"
             opacity="0.5"
@@ -56,7 +56,7 @@ export function GallerySection() {
             cy="35"
             rx="8"
             ry="3"
-            fill="#7c9a73"
+            fill="#A8B5A0"
             fillOpacity="0.25"
             transform="rotate(-20 28 35)"
           />
@@ -65,7 +65,7 @@ export function GallerySection() {
             cy="55"
             rx="6"
             ry="2.5"
-            fill="#7c9a73"
+            fill="#A8B5A0"
             fillOpacity="0.2"
             transform="rotate(10 15 55)"
           />
@@ -90,14 +90,14 @@ export function GallerySection() {
         >
           <path
             d="M5 0 Q15 30 12 60 Q8 90 20 110"
-            stroke="#7c9a73"
+            stroke="#A8B5A0"
             strokeWidth="1"
             fill="none"
             opacity="0.6"
           />
           <path
             d="M10 30 Q30 40 40 30"
-            stroke="#7c9a73"
+            stroke="#A8B5A0"
             strokeWidth="0.8"
             fill="none"
             opacity="0.5"
@@ -107,7 +107,7 @@ export function GallerySection() {
             cy="35"
             rx="8"
             ry="3"
-            fill="#7c9a73"
+            fill="#A8B5A0"
             fillOpacity="0.25"
             transform="rotate(-20 28 35)"
           />
@@ -116,7 +116,7 @@ export function GallerySection() {
             cy="55"
             rx="6"
             ry="2.5"
-            fill="#7c9a73"
+            fill="#A8B5A0"
             fillOpacity="0.2"
             transform="rotate(10 15 55)"
           />
@@ -131,12 +131,12 @@ export function GallerySection() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 1.2 }}
         >
           {/* Small caps tagline with ornamental lines */}
           <div className="flex items-center justify-center gap-3 mb-4">
             <div className="w-10 h-[1px] bg-gradient-to-r from-transparent to-[var(--wedding-accent)]/40" />
-            <span className="font-body text-[10px] tracking-[0.35em] uppercase text-[var(--wedding-accent)] opacity-70">
+            <span className="font-body text-[10px] tracking-[0.35em] uppercase text-[var(--wedding-accent)] opacity-60">
               Love Story
             </span>
             <div className="w-10 h-[1px] bg-gradient-to-l from-transparent to-[var(--wedding-accent)]/40" />
@@ -171,7 +171,7 @@ export function GallerySection() {
               width="24"
               height="18"
               viewBox="0 0 24 18"
-              className="text-[var(--wedding-accent)] opacity-40"
+              className="text-[var(--wedding-accent)] opacity-25"
             >
               <path
                 d="M0 18V10.5C0 4.5 4 0.5 10 0V3.5C7 4.5 5.5 6.5 5.5 9H10V18H0ZM14 18V10.5C14 4.5 18 0.5 24 0V3.5C21 4.5 19.5 6.5 19.5 9H24V18H14Z"
@@ -179,7 +179,7 @@ export function GallerySection() {
               />
             </svg>
           </div>
-          <p className="font-script text-2xl md:text-3xl text-[var(--wedding-text-muted)] opacity-70 leading-relaxed">
+          <p className="font-script text-2xl md:text-3xl text-[var(--wedding-text-muted)] opacity-60 leading-relaxed">
             Two souls with but a single thought,
             <br />
             Two hearts that beat as one.
@@ -206,7 +206,7 @@ export function GallerySection() {
           viewport={{ once: true }}
           transition={{ delay: 0.5 }}
         >
-          <p className="font-body text-[10px] tracking-[0.3em] text-[var(--wedding-text-muted)] uppercase opacity-60">
+          <p className="font-body text-[10px] tracking-[0.3em] text-[var(--wedding-text-muted)] uppercase opacity-25">
             Captured Moments
           </p>
         </motion.div>
