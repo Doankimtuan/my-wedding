@@ -48,7 +48,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Kim Tuấn & Thanh Ngân" }],
   creator: "Kim Tuấn & Thanh Ngân",
-  metadataBase: new URL("https://my-wedding.vercel.app"),
+  metadataBase: new URL("https://tuan-ngan-wedding.vercel.app"),
   openGraph: {
     title: "💒 Thiệp Cưới | Kim Tuấn & Thanh Ngân",
     description:
