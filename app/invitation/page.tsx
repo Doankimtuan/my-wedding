@@ -1,5 +1,7 @@
 "use client";
 
+import { motion, AnimatePresence } from "framer-motion";
+
 import { Suspense, useRef, useEffect, useCallback } from "react";
 import { useSearchParams } from "next/navigation";
 import { EnvelopeCover } from "@/components/invitation/EnvelopeCover";
@@ -17,6 +19,7 @@ function InvitationContent() {
   const guestParam = searchParams.get("guest");
   const slugParam = searchParams.get("slug");
 
+  const [isLoading, setIsLoading] = useState(true);
   const [guestName, setGuestName] = useState<string | null>("Quý Khách");
 
   // Fetch guest name from database (checking both slug and guest param)
@@ -25,24 +28,31 @@ function InvitationContent() {
       // Prioritize explicit slug param, otherwise try using guest param as slug
       const lookupSlug = slugParam || guestParam;
 
-      if (!lookupSlug) return;
+      const fetchData = async () => {
+        if (!lookupSlug) return;
+        try {
+          const supabase = createClient();
+          const { data, error } = await supabase
+            .from("guests")
+            .select("name")
+            .eq("slug", lookupSlug)
+            .single();
 
-      try {
-        const supabase = createClient();
-        const { data, error } = await supabase
-          .from("guests")
-          .select("name")
-          .eq("slug", lookupSlug)
-          .single();
-
-        if (data && !error) {
-          setGuestName(data.name);
-        } else {
-          setGuestName("Quý Khách");
+          if (data && !error) {
+            setGuestName(data.name);
+          }
+        } catch (err) {
+          console.error("Error fetching guest:", err);
         }
-      } catch (err) {
-        console.error("Error fetching guest:", err);
-      }
+      };
+
+      // Wait for both data fetch and minimum loading time (2s)
+      await Promise.all([
+        fetchData(),
+        new Promise((resolve) => setTimeout(resolve, 2000)),
+      ]);
+
+      setIsLoading(false);
     }
 
     fetchGuestName();
@@ -155,6 +165,42 @@ function InvitationContent() {
       >
         {/* Subtle page-wide falling petals effect */}
         <FallingPetals />
+
+        <AnimatePresence>
+          {isLoading && (
+            <motion.div
+              className="fixed inset-0 z-50 flex items-center justify-center bg-[var(--wedding-bg-paper)]"
+              initial={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.8, ease: "easeInOut" }}
+            >
+              <div className="flex flex-col items-center">
+                {/* Logo / Initials */}
+                <motion.div
+                  initial={{ scale: 0.8, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  transition={{ duration: 1, ease: "easeOut" }}
+                  className="w-24 h-24 rounded-full flex items-center justify-center mb-8 relative"
+                >
+                  <div className="absolute inset-0 border border-[var(--wedding-primary)] opacity-20 rounded-full" />
+                  <div className="absolute inset-2 border border-[var(--wedding-primary)] opacity-40 rounded-full" />
+                  <span className="font-display text-4xl text-[var(--wedding-primary)] tracking-widest">
+                    T&N
+                  </span>
+                </motion.div>
+
+                {/* Loading Text */}
+                <motion.p
+                  className="font-body text-[10px] tracking-[0.4em] uppercase text-[var(--wedding-text-muted)]"
+                  animate={{ opacity: [0.3, 1, 0.3] }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                >
+                  Loading
+                </motion.p>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
 
         <EnvelopeCover guestName={guestName} onOpen={handleOpenEnvelope} />
         <div id="main-content">
