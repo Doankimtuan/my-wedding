@@ -52,13 +52,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: "💒 Thiệp Cưới | Kim Tuấn & Thanh Ngân",
     description:
-      "Trân trọng kính mời bạn đến tham dự lễ thành hôn của chúng tôi. Sự hiện diện của bạn là niềm vinh hạnh và hạnh phúc lớn nhất!",
+      "Trân trọng kính mời bạn đến tham dự lễ thành hôn của chúng tôi.",
+    url: "https://tuan-ngan-wedding.vercel.app/invitation",
     type: "website",
     locale: "vi_VN",
     siteName: "Thiệp Cưới Kim Tuấn & Thanh Ngân",
     images: [
       {
-        url: "https://tuan-ngan-wedding.vercel.app/images/og-image.png",
+        url: "https://tuan-ngan-wedding.vercel.app/images/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "Thiệp cưới Kim Tuấn & Thanh Ngân",
