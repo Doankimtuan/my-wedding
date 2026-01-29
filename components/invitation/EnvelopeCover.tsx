@@ -4,7 +4,7 @@ import gsap from "gsap";
 import { useWedding, defaultWeddingInfo } from "./WeddingContext";
 
 interface GreetingCardProps {
-  guestName: string;
+  guestName: string | null;
   onOpen: () => void;
 }
 

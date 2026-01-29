@@ -6,12 +6,14 @@ import File1Image from "@/assets/images/file-1.jpg";
 import File2Image from "@/assets/images/file-2.jpg";
 import File3Image from "@/assets/images/file-3.png";
 import File4Image from "@/assets/images/file-4.jpg";
+import File5Image from "@/assets/images/file-5.jpg";
 
 const filmImages: StaticImageData[] = [
   File1Image,
   File2Image,
   File3Image,
   File4Image,
+  File5Image,
 ];
 
 export function FilmStrip() {

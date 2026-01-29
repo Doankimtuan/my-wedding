@@ -1,11 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Send, Check, Users, Heart } from "lucide-react";
 
 interface RSVPSectionProps {
-  defaultName: string;
+  defaultName: string | null;
 }
 
 import { useSearchParams } from "next/navigation";
@@ -62,6 +62,13 @@ export function RSVPSection({ defaultName }: RSVPSectionProps) {
       setIsSubmitting(false);
     }
   };
+
+  useEffect(() => {
+    setFormData({
+      ...formData,
+      name: defaultName,
+    });
+  }, [defaultName]);
 
   return (
     <section className="relative px-6 py-20 bg-[var(--wedding-bg-paper)] overflow-hidden">
@@ -137,15 +144,15 @@ export function RSVPSection({ defaultName }: RSVPSectionProps) {
               </label>
               <input
                 type="text"
-                value={formData.name}
+                value={formData.name || ""}
                 // If slug is present, make name readonly to ensure deterministic link
-                readOnly={!!guestSlug}
+                readOnly={defaultName !== "Quý Khách"}
                 onChange={(e) =>
                   setFormData({ ...formData, name: e.target.value })
                 }
                 placeholder="Nhập tên của bạn"
                 className={`w-full px-4 py-3 rounded-lg font-body text-sm text-[var(--wedding-secondary)] placeholder-[var(--wedding-text-muted)]/50 transition-all duration-300 focus:outline-none ${
-                  guestSlug ? "opacity-60 cursor-not-allowed" : ""
+                  defaultName ? "opacity-60 cursor-not-allowed" : ""
                 }`}
                 style={{
                   background: "rgba(250, 247, 243, 0.8)",
@@ -153,7 +160,7 @@ export function RSVPSection({ defaultName }: RSVPSectionProps) {
                 }}
                 required
               />
-              {!guestSlug && (
+              {!defaultName && (
                 <p className="mt-1 text-[10px] text-[var(--wedding-text-muted)] opacity-25">
                   Vui lòng nhập chính xác tên như trên thiệp mời.
                 </p>

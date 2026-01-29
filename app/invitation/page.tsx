@@ -17,7 +17,7 @@ function InvitationContent() {
   const guestParam = searchParams.get("guest");
   const slugParam = searchParams.get("slug");
 
-  const [guestName, setGuestName] = useState(guestParam || "Quý Khách");
+  const [guestName, setGuestName] = useState<string | null>("Quý Khách");
 
   // Fetch guest name from database (checking both slug and guest param)
   useEffect(() => {
@@ -34,6 +34,8 @@ function InvitationContent() {
           .select("name")
           .eq("slug", lookupSlug)
           .single();
+
+        console.log("--------", data);
 
         if (data && !error) {
           setGuestName(data.name);
@@ -156,12 +158,9 @@ function InvitationContent() {
         {/* Subtle page-wide falling petals effect */}
         <FallingPetals />
 
-        <EnvelopeCover
-          guestName={decodeURIComponent(guestName)}
-          onOpen={handleOpenEnvelope}
-        />
+        <EnvelopeCover guestName={guestName} onOpen={handleOpenEnvelope} />
         <div id="main-content">
-          <MainContent guestName={decodeURIComponent(guestName)} />
+          <MainContent guestName={guestName} />
         </div>
 
         <MusicPlayer shouldAutoPlay={canScroll} />

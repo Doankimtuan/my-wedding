@@ -13,7 +13,7 @@ import { MusicPlayer } from "./MusicPlayer";
 import { useWedding, defaultWeddingInfo } from "./WeddingContext";
 
 interface MainContentProps {
-  guestName: string;
+  guestName: string | null;
 }
 
 export function MainContent({ guestName }: MainContentProps) {

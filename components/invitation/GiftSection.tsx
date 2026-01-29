@@ -14,9 +14,9 @@ interface BankInfo {
 
 const bankAccounts: BankInfo[] = [
   {
-    bankName: "Vietcombank",
-    accountNumber: "1032668177",
-    accountName: "LE THI THANH NGAN",
+    bankName: "TPBank",
+    accountNumber: "62292826729",
+    accountName: "DOAN KIM TUAN",
     qrCode: "/images/qr.png",
   },
 ];
@@ -179,7 +179,7 @@ export function GiftSection() {
             <div className="flex-shrink-0 relative">
               {bankAccounts[0].qrCode && (
                 <div
-                  className="w-[100px] h-[100px] rounded-lg overflow-hidden bg-white relative shadow-sm"
+                  className="w-[150px] h-[150px] rounded-lg overflow-hidden bg-white relative shadow-sm"
                   style={{
                     border: "4px solid white", // Polaroid/Stamp thick border
                     boxShadow: "0 2px 8px rgba(61, 53, 46, 0.08)", // Subtle lift
@@ -188,8 +188,8 @@ export function GiftSection() {
                   <Image
                     src={bankAccounts[0].qrCode}
                     alt={`QR Code ${bankAccounts[0].bankName}`}
-                    width={100}
-                    height={100}
+                    width={200}
+                    height={200}
                     className="w-full h-full object-contain"
                     // No filters ensuring 100% scannability
                   />
