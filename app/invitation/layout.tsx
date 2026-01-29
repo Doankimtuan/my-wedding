@@ -59,7 +59,7 @@ export const metadata: Metadata = {
     siteName: "Thiệp Cưới Kim Tuấn & Thanh Ngân",
     images: [
       {
-        url: "https://tuan-ngan-wedding.vercel.app/images/og-image.jpg",
+        url: "https://tuan-ngan-wedding.vercel.app/images/og-image.png",
         width: 1200,
         height: 630,
         alt: "Thiệp cưới Kim Tuấn & Thanh Ngân",
