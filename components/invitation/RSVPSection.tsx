@@ -161,7 +161,7 @@ export function RSVPSection({ defaultName }: RSVPSectionProps) {
                 required
               />
               {!defaultName && (
-                <p className="mt-1 text-[10px] text-[var(--wedding-text-muted)] opacity-25">
+                <p className="mt-1 text-[10px] text-[var(--wedding-text-muted)] opacity-50">
                   Vui lòng nhập chính xác tên như trên thiệp mời.
                 </p>
               )}
@@ -273,7 +273,7 @@ export function RSVPSection({ defaultName }: RSVPSectionProps) {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full flex items-center justify-center gap-2 py-3.5 px-4 rounded-lg transition-all duration-300 hover:scale-[1.02] disabled:opacity-25 disabled:cursor-not-allowed"
+              className="w-full flex items-center justify-center gap-2 py-3.5 px-4 rounded-lg transition-all duration-300 hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed"
               style={{
                 background:
                   "linear-gradient(135deg, var(--wedding-accent) 0%, #b8963d 100%)",

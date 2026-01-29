@@ -171,7 +171,7 @@ export function GallerySection() {
               width="24"
               height="18"
               viewBox="0 0 24 18"
-              className="text-[var(--wedding-accent)] opacity-25"
+              className="text-[var(--wedding-accent)] opacity-50"
             >
               <path
                 d="M0 18V10.5C0 4.5 4 0.5 10 0V3.5C7 4.5 5.5 6.5 5.5 9H10V18H0ZM14 18V10.5C14 4.5 18 0.5 24 0V3.5C21 4.5 19.5 6.5 19.5 9H24V18H14Z"
@@ -206,7 +206,7 @@ export function GallerySection() {
           viewport={{ once: true }}
           transition={{ delay: 0.5 }}
         >
-          <p className="font-body text-[10px] tracking-[0.3em] text-[var(--wedding-text-muted)] uppercase opacity-25">
+          <p className="font-body text-[10px] tracking-[0.3em] text-[var(--wedding-text-muted)] uppercase opacity-50">
             Captured Moments
           </p>
         </motion.div>

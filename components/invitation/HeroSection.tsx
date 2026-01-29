@@ -38,7 +38,7 @@ export function HeroSection() {
           BOTANICAL DECORATION — TOP LEFT
           ═══════════════════════════════════════════════ */}
       <motion.div
-        className="absolute top-4 left-2 w-28 h-36 pointer-events-none opacity-25"
+        className="absolute top-4 left-2 w-28 h-36 pointer-events-none opacity-50"
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 0.25, x: 0 }}
         transition={{ duration: 1.2, delay: 0.3 }}
@@ -112,7 +112,7 @@ export function HeroSection() {
           BOTANICAL DECORATION — TOP RIGHT (mirrored)
           ═══════════════════════════════════════════════ */}
       <motion.div
-        className="absolute top-4 right-2 w-28 h-36 pointer-events-none opacity-25"
+        className="absolute top-4 right-2 w-28 h-36 pointer-events-none opacity-50"
         initial={{ opacity: 0, x: 20 }}
         animate={{ opacity: 0.25, x: 0 }}
         transition={{ duration: 1.2, delay: 0.4 }}
@@ -233,7 +233,7 @@ export function HeroSection() {
             <div className="relative mb-4">
               {/* Outer glow effect */}
               <div
-                className="absolute -inset-4 rounded-lg opacity-25"
+                className="absolute -inset-4 rounded-lg opacity-50"
                 style={{
                   background:
                     "radial-gradient(ellipse at center, rgba(197, 168, 109, 0.15) 0%, transparent 70%)",
@@ -330,7 +330,7 @@ export function HeroSection() {
             <div className="relative mb-4">
               {/* Outer glow effect — slightly warmer for bride */}
               <div
-                className="absolute -inset-4 rounded-lg opacity-25"
+                className="absolute -inset-4 rounded-lg opacity-50"
                 style={{
                   background:
                     "radial-gradient(ellipse at center, rgba(212, 168, 168, 0.12) 0%, transparent 70%)",
@@ -431,7 +431,7 @@ export function HeroSection() {
         </div>
 
         {/* Location */}
-        <p className="font-body text-[9px] tracking-[0.3em] text-[var(--wedding-primary)] uppercase opacity-25 mb-4">
+        <p className="font-body text-[9px] tracking-[0.3em] text-[var(--wedding-primary)] uppercase opacity-50 mb-4">
           {info.venue_address
             ? info.venue_address.split(",").slice(-1)[0].trim()
             : "Vietnam"}
@@ -460,7 +460,7 @@ export function HeroSection() {
           BOTANICAL DECORATION — BOTTOM LEFT
           ═══════════════════════════════════════════════ */}
       <motion.div
-        className="absolute bottom-8 left-2 w-24 h-32 pointer-events-none opacity-25"
+        className="absolute bottom-8 left-2 w-24 h-32 pointer-events-none opacity-50"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 0.25, y: 0 }}
         transition={{ duration: 1, delay: 0.6 }}
@@ -511,7 +511,7 @@ export function HeroSection() {
           BOTANICAL DECORATION — BOTTOM RIGHT
           ═══════════════════════════════════════════════ */}
       <motion.div
-        className="absolute bottom-8 right-2 w-24 h-32 pointer-events-none opacity-25"
+        className="absolute bottom-8 right-2 w-24 h-32 pointer-events-none opacity-50"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 0.25, y: 0 }}
         transition={{ duration: 1, delay: 0.7 }}

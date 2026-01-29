@@ -84,7 +84,7 @@ export function WishesSection() {
           BOTANICAL DECORATION — LEFT
           ═══════════════════════════════════════════════ */}
       <motion.div
-        className="absolute top-12 left-0 w-16 h-28 pointer-events-none opacity-25"
+        className="absolute top-12 left-0 w-16 h-28 pointer-events-none opacity-50"
         initial={{ opacity: 0, x: -20 }}
         whileInView={{ opacity: 0.25, x: 0 }}
         viewport={{ once: true }}
@@ -123,7 +123,7 @@ export function WishesSection() {
           BOTANICAL DECORATION — RIGHT
           ═══════════════════════════════════════════════ */}
       <motion.div
-        className="absolute top-12 right-0 w-16 h-28 pointer-events-none opacity-25"
+        className="absolute top-12 right-0 w-16 h-28 pointer-events-none opacity-50"
         initial={{ opacity: 0, x: 20 }}
         whileInView={{ opacity: 0.25, x: 0 }}
         viewport={{ once: true }}
@@ -169,7 +169,7 @@ export function WishesSection() {
       <div className="text-center mb-10">
         <div className="flex items-center justify-center gap-3 mb-3">
           <div className="w-10 h-[1px] bg-gradient-to-r from-transparent to-[var(--wedding-accent)]/40" />
-          <span className="font-body text-[10px] tracking-[0.35em] uppercase text-[var(--wedding-accent)] opacity-25">
+          <span className="font-body text-[10px] tracking-[0.35em] uppercase text-[var(--wedding-accent)] opacity-50">
             Lời Chúc
           </span>
           <div className="w-10 h-[1px] bg-gradient-to-l from-transparent to-[var(--wedding-accent)]/40" />
@@ -370,7 +370,7 @@ export function WishesSection() {
           ═══════════════════════════════════════════════ */}
       <div className="flex items-center justify-center gap-3 mt-10">
         <div className="w-12 h-[1px] bg-gradient-to-r from-transparent to-[var(--wedding-accent)]/30" />
-        <Heart size={12} className="text-[var(--wedding-accent)] opacity-25" />
+        <Heart size={12} className="text-[var(--wedding-accent)] opacity-50" />
         <div className="w-12 h-[1px] bg-gradient-to-l from-transparent to-[var(--wedding-accent)]/30" />
       </div>
     </section>

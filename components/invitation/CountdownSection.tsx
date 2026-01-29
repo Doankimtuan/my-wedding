@@ -104,7 +104,7 @@ export function CountdownSection({ targetDate }: CountdownSectionProps) {
           BOTANICAL DECORATION — TOP LEFT
           ═══════════════════════════════════════════════ */}
       <motion.div
-        className="absolute top-8 left-4 w-20 h-28 pointer-events-none opacity-25"
+        className="absolute top-8 left-4 w-20 h-28 pointer-events-none opacity-50"
         initial={{ opacity: 0, x: -20 }}
         whileInView={{ opacity: 0.6, x: 0 }}
         viewport={{ once: true }}
@@ -150,7 +150,7 @@ export function CountdownSection({ targetDate }: CountdownSectionProps) {
           BOTANICAL DECORATION — TOP RIGHT
           ═══════════════════════════════════════════════ */}
       <motion.div
-        className="absolute top-8 right-4 w-20 h-28 pointer-events-none opacity-25"
+        className="absolute top-8 right-4 w-20 h-28 pointer-events-none opacity-50"
         initial={{ opacity: 0, x: 20 }}
         whileInView={{ opacity: 0.6, x: 0 }}
         viewport={{ once: true }}
@@ -208,7 +208,7 @@ export function CountdownSection({ targetDate }: CountdownSectionProps) {
           transition={{ duration: 1.2 }}
         >
           {/* Small caps tagline */}
-          <p className="font-body text-[10px] tracking-[0.35em] text-[var(--wedding-primary)] uppercase mb-4 opacity-25">
+          <p className="font-body text-[10px] tracking-[0.35em] text-[var(--wedding-primary)] uppercase mb-4 opacity-50">
             We Are Getting Married
           </p>
 

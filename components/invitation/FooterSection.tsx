@@ -22,7 +22,7 @@ export function FooterSection() {
           BOTANICAL DECORATION — LEFT
           ═══════════════════════════════════════════════ */}
       <motion.div
-        className="absolute top-8 left-0 w-20 h-32 pointer-events-none opacity-25"
+        className="absolute top-8 left-0 w-20 h-32 pointer-events-none opacity-50"
         initial={{ opacity: 0, x: -20 }}
         whileInView={{ opacity: 0.25, x: 0 }}
         viewport={{ once: true }}
@@ -70,7 +70,7 @@ export function FooterSection() {
           BOTANICAL DECORATION — RIGHT
           ═══════════════════════════════════════════════ */}
       <motion.div
-        className="absolute top-8 right-0 w-20 h-32 pointer-events-none opacity-25"
+        className="absolute top-8 right-0 w-20 h-32 pointer-events-none opacity-50"
         initial={{ opacity: 0, x: 20 }}
         whileInView={{ opacity: 0.25, x: 0 }}
         viewport={{ once: true }}
@@ -332,7 +332,7 @@ export function FooterSection() {
             width="8"
             height="8"
             viewBox="0 0 8 8"
-            className="text-[var(--wedding-accent)] opacity-25"
+            className="text-[var(--wedding-accent)] opacity-50"
           >
             <path
               d="M4 0 L5 3 L8 4 L5 5 L4 8 L3 5 L0 4 L3 3 Z"
