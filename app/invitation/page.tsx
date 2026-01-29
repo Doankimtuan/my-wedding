@@ -35,8 +35,6 @@ function InvitationContent() {
           .eq("slug", lookupSlug)
           .single();
 
-        console.log("--------", data);
-
         if (data && !error) {
           setGuestName(data.name);
         } else {

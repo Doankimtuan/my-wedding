@@ -324,6 +324,24 @@ export const EnvelopeCover = ({ guestName, onOpen }: GreetingCardProps) => {
             }
           />
 
+          {/* Click instruction hint */}
+          <motion.p
+            className="absolute left-1/2 -translate-x-1/2 text-[var(--wedding-accent)] text-[10px] tracking-[0.2em] uppercase font-body whitespace-nowrap pointer-events-none"
+            style={{ bottom: "-60px" }}
+            animate={isOpen ? { opacity: 0 } : { opacity: [0.4, 0.8, 0.4] }}
+            transition={
+              isOpen
+                ? { duration: 0.5 }
+                : {
+                    duration: 2,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }
+            }
+          >
+            (Chạm vào để mở)
+          </motion.p>
+
           {/* ════════════════════════════════════════════
               ENVELOPE STRUCTURE
               Proper layer order (bottom to top):
