@@ -5,6 +5,7 @@ import { HeroSection } from "./HeroSection";
 import { CountdownSection } from "./CountdownSection";
 import { EventSection } from "./EventSection";
 import { GallerySection } from "./GallerySection";
+import { TimelineSection } from "./TimelineSection";
 import { RSVPSection } from "./RSVPSection";
 import { WishesSection } from "./WishesSection";
 import { GiftSection } from "./GiftSection";
@@ -40,6 +41,9 @@ export function MainContent({ guestName }: MainContentProps) {
 
       {/* Event Information */}
       <EventSection />
+
+      {/* Timeline Section */}
+      <TimelineSection />
 
       {/* Photo Gallery */}
       <GallerySection />

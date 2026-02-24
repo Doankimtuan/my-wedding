@@ -190,7 +190,7 @@ export function EventSection() {
         </div>
 
         <p className="font-body text-xs text-[var(--wedding-text-muted)] italic mb-8 opacity-50">
-          (Nhằm ngày 19 tháng 12 năm Ất Tỵ)
+          (Nhằm ngày 26 tháng 01 năm Bính Ngọ)
         </p>
       </motion.div>
 

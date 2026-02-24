@@ -49,15 +49,36 @@ export async function POST(request: Request) {
     // The current RSVPSection allows typing a name. If I typed "John Doe" and I wasn't in DB, what happens?
     // Let's return 400 with "Guest not found" to prompt them to contact host or try exact name.
 
-    if (!guestId) {
-      // Optional: Auto-create guest for "Open RSVP" style
-      // For now, let's return error to be safe and avoid database clutter
+    if (!guestId && name?.trim()) {
+      // Auto-create walk-in guest
+      const slug =
+        name
+          .trim()
+          .toLowerCase()
+          .replace(/[^a-z0-9]+/g, "-")
+          .replace(/(^-|-$)/g, "") +
+        "-" +
+        Date.now().toString(36);
+
+      const { data: newGuest, error: createError } = await supabase
+        .from("guests")
+        .insert({ name: name.trim(), slug, group_name: "Walk-in" })
+        .select("id, name")
+        .single();
+
+      if (createError || !newGuest) {
+        console.error("Error auto-creating guest:", createError);
+        return NextResponse.json(
+          { error: "Could not register. Please try again." },
+          { status: 500 },
+        );
+      }
+      guestId = newGuest.id;
+      guestData = newGuest;
+    } else if (!guestId) {
       return NextResponse.json(
-        {
-          error:
-            "Guest name not found on the list. Please use the exact name on your invitation or contact the couple.",
-        },
-        { status: 404 }
+        { error: "Please enter your name." },
+        { status: 400 },
       );
     }
 
@@ -96,7 +117,7 @@ export async function POST(request: Request) {
       console.error("RSVP DB Error:", error);
       return NextResponse.json(
         { error: "Failed to save RSVP." },
-        { status: 500 }
+        { status: 500 },
       );
     }
 
@@ -105,7 +126,7 @@ export async function POST(request: Request) {
     console.error("RSVP Server Error:", err);
     return NextResponse.json(
       { error: "Internal Server Error" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

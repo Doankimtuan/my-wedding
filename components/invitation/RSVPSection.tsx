@@ -20,7 +20,7 @@ export function RSVPSection({ defaultName }: RSVPSectionProps) {
   // But we need the raw slug for the API.
 
   const [formData, setFormData] = useState({
-    name: defaultName,
+    name: defaultName === "Quý Khách" ? "" : defaultName,
     attending: "yes",
     guests: "1",
     message: "",
@@ -64,10 +64,10 @@ export function RSVPSection({ defaultName }: RSVPSectionProps) {
   };
 
   useEffect(() => {
-    setFormData({
-      ...formData,
-      name: defaultName,
-    });
+    setFormData((prev) => ({
+      ...prev,
+      name: defaultName === "Quý Khách" ? "" : defaultName,
+    }));
   }, [defaultName]);
 
   return (
@@ -145,14 +145,14 @@ export function RSVPSection({ defaultName }: RSVPSectionProps) {
               <input
                 type="text"
                 value={formData.name || ""}
-                // If slug is present, make name readonly to ensure deterministic link
-                readOnly={defaultName !== "Quý Khách"}
+                // If slug is NOT present, guest can edit the name (Walk-in mode)
+                readOnly={!!guestSlug}
                 onChange={(e) =>
                   setFormData({ ...formData, name: e.target.value })
                 }
                 placeholder="Nhập tên của bạn"
                 className={`w-full px-4 py-3 rounded-lg font-body text-sm text-[var(--wedding-secondary)] placeholder-[var(--wedding-text-muted)]/50 transition-all duration-300 focus:outline-none ${
-                  defaultName ? "opacity-60 cursor-not-allowed" : ""
+                  !!guestSlug ? "opacity-60 cursor-not-allowed" : ""
                 }`}
                 style={{
                   background: "rgba(250, 247, 243, 0.8)",
@@ -160,9 +160,9 @@ export function RSVPSection({ defaultName }: RSVPSectionProps) {
                 }}
                 required
               />
-              {!defaultName && (
+              {!guestSlug && (
                 <p className="mt-1 text-[10px] text-[var(--wedding-text-muted)] opacity-50">
-                  Vui lòng nhập chính xác tên như trên thiệp mời.
+                  Vui lòng nhập tên của bạn để chúng tôi dễ dàng đón tiếp.
                 </p>
               )}
             </div>
